@@ -1,0 +1,89 @@
+.container-fluid {
+    padding: 0;
+}
+.container-fluid .d-flex {
+    background-color: #3f474d;
+    width: 100%;
+    color: white;
+}
+.container-fluid .d-flex span {
+   width: 200px;
+
+}
+.container-fluid .d-flex span i {
+    margin: auto;
+    font-weight: bold;
+    font-family: "Calibri",sans-serif;
+    font-style: normal;
+}
+.bg-transparent div .text-dark {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.container-fluid .bg-transparent {
+    display: flex;
+    width: 250px;
+    margin: 10px;
+}
+
+.container-fluid .bg-transparent .col-6 {
+    flex-wrap: wrap;
+    width: 70%;
+}
+.border-top-0 {
+    width: 250px;
+    overflow: hidden;
+}
+.border-top-0:focus, .border-top-0:active {
+    border-right: 0 solid transparent;
+    border-left: 0 solid transparent;
+    border-top: 0 solid transparent;
+    overflow: hidden;
+    outline: none;
+    font-weight: bold;
+    font-family: "Calibri Light (Titres)",sans-serif;
+    width: 250px;
+}
+.border-top-0 {
+    border-right: 0 solid transparent;
+    border-left: 0 solid transparent;
+    border-top: 0 solid transparent;
+    width: 250px;
+    overflow: hidden;
+    outline: none;
+    font-weight: bold;
+    font-family: "Calibri Light (Titres)",sans-serif;;
+}
+.bg-transparent .d-flex .d-flex input {
+    /* width: 100px; */
+    margin-right: 20px;
+}
+textarea {
+    width: 250px;
+    height: 250px;
+    font-weight: bold;
+    border: 2px solid black;
+}
+.bg-transparent button {
+    border: 0;
+    font-weight: bold;
+    height: 30px;
+}
+@media only screen and (max-width : 550px) {
+    h3 {
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .container-fluid .d-flex span {
+        width: 80px;
+    }
+    .container-fluid .d-flex span i {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width : 990px) {
+    .container-fluid .bg-transparent .col-6 {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}

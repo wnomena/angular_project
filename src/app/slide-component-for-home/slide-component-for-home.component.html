@@ -1,5 +1,6 @@
 <section>
-    <div class="slider_image">
-        
+    <div *ngFor="let i of slide" class="slider_image" >
+        <img [src]="i.src" alt="image" srcset="">
+        <span>{{ i.name }}</span>
     </div>
 </section>

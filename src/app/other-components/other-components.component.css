@@ -11,9 +11,9 @@ section{
     justify-content: space-around;
     height: 40px;
     font-size: 20px;
-    font-weight: bold;
     padding-top: 5px;
     background-color: #076eaa;
+    font-family:  "Calibri Light (Titres)",sans-serif;
 }
 .header_container .space_between {
     padding: 0;
@@ -42,4 +42,60 @@ section{
     font-size: larger;
     margin-top: 10px;
     color: rgb(245, 241, 241);
+}
+span {
+    font-family: sans-serif;
+    font-weight: bold;
+    height: 30px;
+    cursor: pointer;
+    padding-top: 5px;
+}
+li{
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    padding-top: 5px;
+}
+li:hover,.full-screen .d-flex span:hover{
+    background-color: #076eaa;
+}
+
+/* responsive de menu */
+@media only screen and (max-width: 1000px){
+    .phone-screen {
+        display: block;
+    }
+    .full-screen {
+        display: none;
+    }
+    .py-1 {
+        display: none;
+    }
+}
+@media only screen and (min-width : 1000px) {
+    .phone-screen {
+        display: none;
+    }
+    .full-screen {
+        display: block;
+        /* word-spacing: 20px; */
+    }
+    .full-screen .d-flex {
+        height: max-content;
+    }
+    .full-screen .d-flex span{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .bgc-undefined .full-screen .d-flex span i {
+        font-family:  "Calibri Light (Titres)",sans-serif;
+    }
+}
+.bgc-undefined {
+    background-color: #383535;
+}
+.dropdown-menu li span i {
+    transform: translateY(-5px);
 }

@@ -1,0 +1,23 @@
+.choice-container div{
+    background-color: #383535;
+    color: #d3cccc;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.choice-container {
+    outline: none;
+    overflow: hidden;
+    border-radius: 10px;
+    /* border: 3px solid red */
+    font-weight: bold;
+
+}
+.choice-container .selected {
+    background-color: #076eaa;
+    color: #d3cccc;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+section.container {
+    margin-top: 5px;
+}

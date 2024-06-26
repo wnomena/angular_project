@@ -1,0 +1,61 @@
+<section class="container-fluid w-full m-0">
+    <div class="d-flex justify-content-between w-full m-0 p-0">
+        <h3>{{ title }}</h3>
+        <span class="d-flex bg-primary"><i class="bi bi-chevron-left"> Retour</i></span>
+    </div>
+    <div class="bg-transparent w-100 m-top-10 d-flex flex-wrap">
+        <div class="col-6 d-flex bg-transparent flex-row">
+            <div class="bg-transparent d-flex flex-column" >
+                <label class="text-dark" for="">Nom</label>
+                <input class="border-top-0 border-start-0 border-end-0 " type="text">
+            </div>
+            <div class="bg-transparent d-flex flex-column m-10" >
+                <label class="text-dark" for="">Distance à parcourir</label>
+                <input class="border-top-0 border-start-0 border-end-0 " type="number">
+            </div>
+            <div class="bg-transparent d-flex flex-column m-10" >
+                <label class="text-dark" for="">Confort</label>
+                <input class="border-top-0 border-start-0 border-end-0" type="number" max="100" min="1">
+            </div>
+            <div class="bg-transparent d-flex flex-column m-10" >
+                <label class="text-dark" for="">Prix</label>
+                <input class="border-top-0 border-start-0 border-end-0" type="number">
+            </div>
+            <div class="bg-transparent d-flex flex-column m-10" >
+                <label class="text-dark" for="">Difficulté</label>
+                <input class="border-top-0 border-start-0 border-end-0" type="number" max="100" min="1">
+            </div>
+            <div class="bg-transparent d-flex flex-column m-10" >
+                <label class="text-dark" for="">Durée total</label>
+                <input class="border-top-0 border-start-0 border-end-0" type="number">
+            </div>
+            <div class="bg-transparent d-flex flex-column m-10" >
+                <label class="text-dark" for="">Période</label>
+                <div class="d-flex bg-transparent flex-column">
+                    <span></span>
+                    <div class="d-flex bg-transparent flex-row">
+                        <input class="border" type="number" max="12" min="1" placeholder="05">
+                        <input class="border" type="number" max="12" min="1" placeholder="07">
+                    </div>
+                </div>
+            </div>
+            <div class="bg-transparent d-flex flex-column m-10" >
+                <label class="text-dark" for="">L'image</label>
+                <input class="text-dark" type="file">
+            </div>
+        </div>
+        <div class="container-fluid bg-transparent d-flex flex-column">
+                <label class="text-dark" for="">La description de ce circuit</label>
+                <textarea class="rounded" name="" id="" placeholder="La description de ce circuit"></textarea>
+        </div><br>
+        <div class="bg-transparent d-flex flex-row">
+            <div class="bg-transparent d-flex w-50">
+                <button class="bg-primary border text-center rounded">Enregistrer</button>
+            </div>
+            <div class="bg-transparent d-flex justify-content-start w-50">
+                <button class="bg-succes rounded">Annuler</button>
+            </div>
+        </div>
+        <!-- <textarea name="" id=""></textarea> -->
+    </div>
+</section>
