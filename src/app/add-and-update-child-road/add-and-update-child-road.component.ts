@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './add-and-update-child-road.component.css'
 })
 export class AddAndUpdateChildRoadComponent {
-
+  title:String = "Ajout de circuit enfant"
 }

@@ -8,10 +8,13 @@ import { SubscriptionAdminAndMemberComponent } from './subscription-admin-and-me
 import { PassComponentForSubsxriptionComponent } from './pass-component-for-subsxription/pass-component-for-subsxription.component';
 import { GetAllParentRoadComponent } from './get-all-parent-road/get-all-parent-road.component';
 import { AddAndUpdateParentRoadComponent } from './add-and-update-parent-road/add-and-update-parent-road.component';
+import { AddAndUpdateChildRoadComponent } from './add-and-update-child-road/add-and-update-child-road.component';
+import { MenuBarAdminComponent } from './menu-bar-admin/menu-bar-admin.component';
+import { MemberManagerComponent } from './member-manager/member-manager.component';
 
 export const routes: Routes = [{
     path : "rakoto",
-    component : AddAndUpdateParentRoadComponent
+    component : MemberManagerComponent
 },
 {
     path : "login/subscription",

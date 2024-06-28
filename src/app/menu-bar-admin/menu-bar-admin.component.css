@@ -1,0 +1,44 @@
+.bg-transparent .bg-primary .label_for_home {
+    font-weight: bold;
+    font-size: 20px;
+    /* transform: translateY(10px); */
+    margin-left: 10px;
+    cursor: pointer;
+}
+.bg-transparent .bg-primary .label_for_home h3 {
+    margin: auto;
+    align-items: center;
+    position: fixed;
+    
+}
+.bg-transparent {
+    width: 400px;
+    transform: translate(-350px,100px);
+    transition: 1s;
+    position: absolute;
+    
+}
+.bg-transparent .bg-primary {
+    margin-top: 10px;
+    padding: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: 1s;
+
+}
+.bg-transparent .bg-primary:hover {
+    margin-top: 10px;
+    padding: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform: translateX(320px);
+    transition: 1s;
+
+}
+.bg-transparent .bg-primary span svg {
+    fill: none;
+    transition: 1s;
+}
+.bg-transparent .bg-primary span svg:hover {
+    fill: black;
+}  
