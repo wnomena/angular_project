@@ -24,3 +24,18 @@ export class member_model {
         this.mot_de_passe = d
     }
 }
+export class commentary_model {
+    _id : String
+    id : Number
+    mail : String
+    string_commentary : String
+    created : String
+
+    constructor(a:String,b : String , c : Number , d : String , e : String) {
+        this._id = a
+        this.created = b
+        this.id = c
+        this.mail = d
+        this.string_commentary = e
+    }
+}

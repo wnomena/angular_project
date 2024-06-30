@@ -11,10 +11,12 @@ import { AddAndUpdateParentRoadComponent } from './add-and-update-parent-road/ad
 import { AddAndUpdateChildRoadComponent } from './add-and-update-child-road/add-and-update-child-road.component';
 import { MenuBarAdminComponent } from './menu-bar-admin/menu-bar-admin.component';
 import { MemberManagerComponent } from './member-manager/member-manager.component';
+import { CommentaryComponent } from './commentary/commentary.component';
+import { ShowStringCommentaryComponent } from './show-string-commentary/show-string-commentary.component';
 
 export const routes: Routes = [{
     path : "rakoto",
-    component : MemberManagerComponent
+    component : MenuBarAdminComponent
 },
 {
     path : "login/subscription",

@@ -1,0 +1,10 @@
+section .bg-primary {
+    width: 700px;
+    padding: 5px;
+
+}
+section .bg-primary span {
+    width: 100%;
+    color: rgb(241, 245, 245);
+    font-weight: bold;
+}

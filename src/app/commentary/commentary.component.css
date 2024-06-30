@@ -1,0 +1,52 @@
+section {
+    width: 100%;
+    color: white;
+}
+section .d-flex {
+    width: 100%;
+    background-color: #383535;
+}
+i {
+    font-weight: bold;
+}
+.return {
+    width: 150px;
+    cursor: pointer;
+
+}
+section .commentary_list {
+    width: 100%;
+    background-color: white;
+}
+section .commentary_list .container-fluid{
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+section .commentary_list .container-fluid .rounded {
+    padding: 3px;
+    color: #036d03;
+    background-color: rgb(118, 207, 118);
+    width: 150px;
+    align-items: center;
+    cursor: pointer;
+}
+section .commentary_list .container-fluid .delete_member {
+    padding: 3px;
+    color: #3f0202;
+    background-color: rgb(245, 38, 38);
+    width: 150px;
+    align-items: center;
+    cursor: pointer;
+}
+section .commentary_list .container-fluid .commentary_container span:hover {
+    color : #00CCFF;
+    cursor: pointer;
+}

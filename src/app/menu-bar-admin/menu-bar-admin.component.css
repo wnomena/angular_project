@@ -12,8 +12,8 @@
     
 }
 .bg-transparent {
-    width: 400px;
-    transform: translate(-350px,100px);
+    width: 450px;
+    transform: translate(-330px,100px);
     transition: 1s;
     position: absolute;
     
@@ -39,6 +39,6 @@
     fill: none;
     transition: 1s;
 }
-.bg-transparent .bg-primary span svg:hover {
+.bg-transparent .bg-primary:hover > span svg {
     fill: black;
 }  
