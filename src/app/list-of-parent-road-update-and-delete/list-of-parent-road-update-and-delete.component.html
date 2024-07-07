@@ -1,0 +1,7 @@
+<section class="d-flex">
+    <div *ngFor="let i of parent_road_list">
+        <div class="col-3 border rounded bg-primary">
+            <img src='data:image/{{ i.presentation_image[0].extention_file_name }};base64,{{ i.presentation_image[0].image }}' alt="{{ i.name }}">
+        </div>
+    </div>
+</section>

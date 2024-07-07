@@ -13,10 +13,11 @@ import { MenuBarAdminComponent } from './menu-bar-admin/menu-bar-admin.component
 import { MemberManagerComponent } from './member-manager/member-manager.component';
 import { CommentaryComponent } from './commentary/commentary.component';
 import { ShowStringCommentaryComponent } from './show-string-commentary/show-string-commentary.component';
+import { ListOfParentRoadUpdateAndDeleteComponent } from './list-of-parent-road-update-and-delete/list-of-parent-road-update-and-delete.component';
 
 export const routes: Routes = [{
     path : "rakoto",
-    component : MenuBarAdminComponent
+    component : AddAndUpdateParentRoadComponent
 },
 {
     path : "login/subscription",

@@ -1,0 +1,9 @@
+section  {
+    width: 100%;
+}
+section div {
+    width: 100%;
+}
+section div .col-3 {
+    width: 400px;
+}

@@ -22,7 +22,9 @@
     "@splidejs/splide": "^4.1.4",
     "aos": "^2.3.4",
     "bootstrap-icons": "^1.11.3",
+    "ngx-socket-io": "^4.7.0",
     "rxjs": "~7.8.0",
+    "socket.io-client": "^4.7.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

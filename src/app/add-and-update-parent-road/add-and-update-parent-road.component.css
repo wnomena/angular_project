@@ -87,3 +87,39 @@ textarea {
         width: 100%;
     }
 }
+#button{
+    width: 110px;
+    text-align: center;
+    color: #046ee0;
+    background-color: white;
+    border: 2px solid #046ee0;
+    font-weight: bold;
+    /* padding: 10px; */
+    border-radius: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#cancel{
+    width: 110px;
+    text-align: center;
+    color: red;
+    background-color: white;
+    border: 2px solid red;
+    font-weight: bold;
+    /* padding: 10px; */
+    border-radius: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#cancel:hover {
+    color: white;
+    background-color: red;
+    text-decoration: none ;
+    border: 1px solid red;
+    transition: 0.3s;
+}
+#button:hover{
+    color: white;
+    background-color: #046ee0;
+    text-decoration: none ;
+    border: 1px solid #046ee0;
+    transition: 0.3s;
+}
