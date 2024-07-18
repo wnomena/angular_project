@@ -1,7 +1,14 @@
-<section class="d-flex">
-    <div *ngFor="let i of parent_road_list">
-        <div class="col-3 border rounded bg-primary">
-            <img src='data:image/{{ i.presentation_image[0].extention_file_name }};base64,{{ i.presentation_image[0].image }}' alt="{{ i.name }}">
+<section>
+    <section class="d-flex flex-nowrap justify-content-around col-3 lg-3">
+        <div class="bg-transparent" *ngFor="let i of parent_road">
+            <img src="{{i.presentation_image}}" alt="{{i.name}}" srcset="">
+            <h4>Nom : {{i.name}}</h4>
+            <div class="d-flex justify-content-around">
+                <div class="suivant">Suivant</div>
+                <div class="modifier">Modifier</div>
+                <div class="supprimer">Supprimer</div>
+            </div>
         </div>
-    </div>
+    </section>
+    <app-internal-footer></app-internal-footer>
 </section>

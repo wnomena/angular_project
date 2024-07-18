@@ -1,7 +1,14 @@
-<section class="container w-full m-0">
-    <div class="d-flex justify-content-center" *ngFor="let i of parent_road_list">
-        <div class="1 border bg-secondary border p-0 m-0 col-4">
-            <img class="h-full" src="" alt="" srcset="">
+<section class="container row d-flex m-auto flex-nowrap">
+    <div class="col-4" *ngFor="let i of parent_road_list">
+        <!-- <img [src]="i.presentation_image" alt=""> -->
+        <div [style]="{'background-image': 'url(' + i.presentation_image + ')'}" class="contain">
+            <div class="linear">
+                <h3>Nom : {{ i.name }}</h3>
+            <h4>Description :  {{ i.about_all_road }}</h4>
+            <div class="d-flex justify-content-end">
+                <div class="button_slide slide_down">Découvrir</div>
+            </div>
+            </div>
         </div>
     </div>
 </section>

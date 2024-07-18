@@ -1,0 +1,47 @@
+section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    overflow-y: hidden;
+}
+section .img_contain {
+    width: 40%;
+    padding: 0;
+}
+section .img_contain img {
+    width: 100%;
+    height: auto;
+    
+}
+app-internal-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+section .d-flex {
+    height: 50px;
+    /* width: 70%; */
+    
+}
+
+
+section .d-flex .border .border p{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    font-weight: bold;
+    height: 100%;
+}
+.modifier {
+    color: #4b4848;
+    cursor: pointer;
+    /* height: 100%; */
+    font-weight: bold;
+    padding: 0 5px;
+}
+.modifier:hover {
+    background-color: #4b4848;
+    color: white;
+
+}

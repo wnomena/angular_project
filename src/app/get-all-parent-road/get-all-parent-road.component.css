@@ -1,3 +1,99 @@
 .container {
-    height: 700px;
+    /* width: 100%; */
+    padding-top: 10px;
+    margin-top: 10px;
+    margin: 0;
 }
+.container .col-4 .contain {
+    font-family: cursive;
+    /* background: linear-gradient(180deg,transparent,rgb(74, 154, 247), rgb(0, 153, 255)); */
+    /* background-position: center; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: inherit;
+    display: block;
+    z-index: 1;
+    opacity: 1;
+    font-weight: bold;
+    color: white;   
+    /* transform: translateY(-122px); */
+}
+.linear {
+    background: linear-gradient(180deg,aqua,aqua,transparent);
+    margin: 0;
+}
+h3 {
+    transition: ease-out 0.5s;
+}
+.container .col-4:hover > .contain h3 ,.container .col-4 .contain h4 {
+    margin-left: 10px;
+    transition: ease-in 0.5s;
+}
+.container .col-4 .contain h4 {
+    color : #353434;
+    font-weight: bold;
+}
+/* Codepen */
+.button_slide {
+    color: black;
+    border: 2px solid #353434;
+    border-radius: 0px;
+    padding: 5px;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #353434;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    font-family: cursive;
+  }
+  
+  .container .col-4:hover > .contain .d-flex .slide_down {
+    box-shadow: inset 0 100px 0 0 #353434;
+    color: white;
+  }
+  /* responsive de style */
+  @media only screen and (min-width : 860px) {
+    .container .col-4 {
+        margin-right: 10px;
+        overflow: hidden;
+        outline: none;
+        height: 400px;
+    }
+    /* .container .col-4 .contain {
+        transform: translateY(- 122px);
+    } */
+  }
+  @media only screen and (max-width:720px) {
+    h3 {
+        font-size :15px;
+     }
+     h4 {
+         font-size: 13px;
+         display: none;
+     }
+     .container .col-4 {
+        margin-right: 10px;
+        overflow: hidden;
+        outline: none;
+        height: 200px;
+    }
+  }
+  /* responsive teste */
+  @media only screen and (min-width : 768px) {
+    .container .col-4 {
+        height: 300px;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .container .col-4 {
+        margin-right: 10px;
+        overflow: hidden;
+        outline: none;
+        height: 400px;  
+    }
+  }
+  /* apartir de 400px on doit utiliser un slide pour un bon affichage de circuit. */

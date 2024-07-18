@@ -1,7 +1,9 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { HoverForMenuPcDirective } from '../hover-for-menu-pc.directive';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { SocketCOnfig } from '../web-socket/injectable';
+import { Month } from '../../simple_animation/animation';
+import axios  from "axios"
+// import { FileSystem } from "@angular/core"
 // import { FormData, parent_road_list } from '../../simple_animation/animation';
 
 @Component({
@@ -11,41 +13,37 @@ import { SocketCOnfig } from '../web-socket/injectable';
   templateUrl: './add-and-update-parent-road.component.html',
   styleUrl: './add-and-update-parent-road.component.css'
 })
-export class AddAndUpdateParentRoadComponent implements OnInit{
-  constructor(private http : HttpClient,@Inject(SocketCOnfig) private SocketConfig : SocketCOnfig) {}
-  ngOnInit(): void {
-    this.SocketConfig.socket.connect("http://localhost:5000",{path : "/"})
-  }
-
+export class AddAndUpdateParentRoadComponent{
+  constructor(private http : HttpClient) {}
   title:String = "Ajout de nouveau circuit parent"
-  form_data = new FileReader()
+  form_data = new FormData()
   async validate_road(nom : string,confort : string,prix : string,difficult : string,period_b:string,period_e:string,img:HTMLInputElement,desc:string) {
-    console.log(img.files ? img.files[0] : undefined)
-    this.form_data.onload = (e) => {
-      console.log(e);
-      
-      let body = {
+    if(img.files){
+      this.form_data.append("image",img.files[0])
+    }
+    let body = {
         name: nom,
         about_all_road : desc,
         price : prix,
-        presentation_image : e ? JSON.stringify(e.target?.result) : undefined,
         difficulty : difficult,
-        period : `${period_b} ${period_e}`
+        period : `${Month(parseInt(period_b))} ${Month(parseInt(period_e))}`
       }
-      // const headers = new HttpHeaders({
-      //   'Content-Type': 'application/json',
-      // });
-      console.log(body)
-      // this.http.post("http://localhost:5000/utilisateurs/add_avant_post/by_user",body).subscribe(request =>{console.log(request)})
-      new Promise(resolve=>{
-        resolve(this.SocketConfig.socket.emit("connection",body))
-      }).then((a)=>{
-        console.log(a)
+      this.form_data.append("body",JSON.stringify(body))
+      this.form_data.forEach((e)=>{
+        console.log(e)
       })
+      const config = {
+        method: 'POST',
+        url: "http://localhost:5000/utilisateurs/add_avant_post/by_user",
+        data: this.form_data,
+        headers : {
+          'Content-Type':'multipart/form-data',
+        }
+      };
+      axios(config).then(a=>{console.log(a)})
+      // this.http.post("http://localhost:5000/utilisateurs/add_avant_post/by_user",this.form_data,{headers : headers_http.set("Content-Type","multipart/form-data")}).subscribe((e)=> console.log(e))
     }
-    if(img.files) this.form_data.readAsDataURL(img.files[0])
   }
-}
 // import { Component, OnInit, OnDestroy } from '@angular/core';
 // import { Socket } from 'ngx-socket-io';
 

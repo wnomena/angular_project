@@ -14,10 +14,17 @@ import { MemberManagerComponent } from './member-manager/member-manager.componen
 import { CommentaryComponent } from './commentary/commentary.component';
 import { ShowStringCommentaryComponent } from './show-string-commentary/show-string-commentary.component';
 import { ListOfParentRoadUpdateAndDeleteComponent } from './list-of-parent-road-update-and-delete/list-of-parent-road-update-and-delete.component';
+import { FooterComponent } from './footer/footer.component';
+import { InternalFooterComponent } from './internal-footer/internal-footer.component';
+import { ListOfChildRoadToDeleteAndUpdateComponent } from './list-of-child-road-to-delete-and-update/list-of-child-road-to-delete-and-update.component';
 
 export const routes: Routes = [{
-    path : "rakoto",
-    component : AddAndUpdateParentRoadComponent
+    path : "ajout",
+    component : GetAllParentRoadComponent
+},
+{
+    path : "rakoto/:id",
+    component : ListOfChildRoadToDeleteAndUpdateComponent
 },
 {
     path : "login/subscription",

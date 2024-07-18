@@ -7,20 +7,20 @@
         <div class="bg-transparent d-flex flex-row flex-wrap">
             <div class="bg-transparent border-0 d-flex flex-column m-0">
                 <label for="">Le nom de votre circuit</label>
-                <input class="border-top-0 border-start-0 border-end-0" type="text">
+                <input [value]="value_to_show?.name" class="border-top-0 border-start-0 border-end-0" type="text">
             </div>
             <div class="bg-transparent border-0 d-flex flex-column m-0">
                 <label for="">Distance à parcourir</label>
-                <input class="border-top-0 border-start-0 border-end-0" type="number">
+                <input [value]="value_to_show?.distance" class="border-top-0 border-start-0 border-end-0" type="number">
             </div>
             <div class="bg-transparent border-0 d-flex flex-column m-0">
                 <label for="">Confort</label>
-                <input class="border-top-0 border-start-0 border-end-0" type="number">
+                <input [value]="value_to_show?.confort" class="border-top-0 border-start-0 border-end-0" type="number">
             </div>
             <div class="bg-transparent border-0 d-flex flex-column m-0">
                 <label for="">Période</label>
                 <div class="periode d-flex flex-row justify-content-around">
-                    <input class="border" type="number" placeholder="07"> <input class="border" type="number" placeholder="09"> 
+                    <input  class="border" type="number" placeholder="07"> <input class="border" type="number" placeholder="09"> 
                 </div>
             </div>
             <div class="bg-transparent border-0 d-flex flex-column m-0">
@@ -31,11 +31,11 @@
             </div>
             <div class="bg-transparent border-0 d-flex flex-column m-0">
                 <label for="">Difficulté</label>
-                <input class="border-top-0 border-start-0 border-end-0" type="number">
+                <input [value]="value_to_show?.difficulty" class="border-top-0 border-start-0 border-end-0" type="number">
             </div>
             <div class="bg-transparent border-0 d-flex flex-column m-0">
                 <label for=""> Prix </label>
-                <input class="border-top-0 border-start-0 border-end-0" type="number">
+                <input [value]="value_to_show?.price" class="border-top-0 border-start-0 border-end-0" type="number">
             </div>
             <div class="bg-transparent border-0 d-flex flex-column m-0">
                 <label for="">Image</label>
@@ -44,10 +44,11 @@
         </div>
         <div class="bg-transparent border-0 d-flex flex-column m-0 w-auto">
             <label for="">La description du circuit</label>
-            <textarea name="" id="" placeholder="Une petite description"></textarea>
+            <textarea [value]="value_to_show?.description" name="" id="" placeholder="Une petite description"></textarea>
         </div>
         <div style="width: 300px;" class="bg-transparent d-flex">
             <span class="rounded border bg-primary"><p>Valider</p></span><span class="rounded"><p>Annuler</p></span>
         </div>
     </div>
 </section>
+<app-internal-footer></app-internal-footer>

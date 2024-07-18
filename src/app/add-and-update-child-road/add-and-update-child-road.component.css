@@ -58,3 +58,8 @@ textarea {
         width: 100%;
     }
 }
+app-internal-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
