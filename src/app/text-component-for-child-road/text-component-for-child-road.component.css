@@ -1,0 +1,33 @@
+
+.row .col-12 .row .col-4 {
+    box-shadow: 5px 5px 10px gray;
+}
+.row .col-12 .row .col-4 .col-12 {
+    font-weight: bold;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT',"Calibri", 'Trebuchet MS', sans-serif
+}
+.row .col-12 .row .col-4 .col-12 .bi progress {
+    background-color: transparent;
+    border-radius: 10px;
+    height: 20px;
+}
+progress[value] {
+    color: red;
+}
+.row .bg-transparent {
+    border-top: 1px solid black;
+    margin-top: 30px;
+}
+.row .bg-transparent p i {
+    color : red;
+}
+.row .bg-transparent .col-12 .col-9 .col-12 .bg .bg-primary {
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+@keyframes change_color {
+    
+}

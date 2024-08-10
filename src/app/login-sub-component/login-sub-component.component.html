@@ -4,14 +4,14 @@
     </div>
     <div class="mb-3 text-center">
       <label for="exampleInputEmail1" class="form-label">Entrer votre adresse mail</label>
-      <input type="email" class="form-control border-top-0 border-start-0 border-end-0 rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input #email type="email" class="form-control border-top-0 border-start-0 border-end-0 rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <div class="mb-3 text-center">
       <label for="exampleInputPassword1" class="form-label ">Entrer votre mot de passe</label>
-      <input type="password" class="form-control border-top-0 border-start-0 border-end-0 rounded-0" id="exampleInputPassword1">
+      <input #pass type="password" class="form-control border-top-0 border-start-0 border-end-0 rounded-0" id="exampleInputPassword1">
     </div>
     <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn-primary">Connexion</button>
+        <button (click)="validate(email.value,pass.value,$event)" class="btn btn-primary">Connexion</button>
     </div>
     <div class="validate d-flex flex-column">
         <span router-link="" class="fs-5">Mot de passe oublié ?</span>

@@ -1,6 +1,24 @@
-<section class="container row d-flex m-auto flex-nowrap">
-    <div class="col-4" *ngFor="let i of parent_road_list">
-        <!-- <img [src]="i.presentation_image" alt=""> -->
+<section class="row border">
+    <div class="col-12 text-center bg-light">
+        <h3>Visitez notre îles et vivez de nouvelle sensation</h3>
+        <h5>Cap Sur Mada vous offres des voyages inoubliables dans plusieurs endroits aux choix.</h5>
+    </div>
+    <div class="col-12 d-flex gap-5 flex-nowrap justify-content-center overflow-x-scroll">
+        <div class="col-3 border rounded" *ngFor="let i of parent_road_list" [style]="{'background-image': 'url(' + i.presentation_image + ')'}">
+            <div class="linear p-2">
+                <h3>Nom : {{ i.name }}</h3>
+            <h4> A partir de <i class="bi bi-currency-pound"> {{ i.price }}</i></h4>
+            <div class="d-flex justify-content-end">
+                <div class="button_slide slide_down text-white"><a class="text-decoration-none text-light" [href]="'public/all_child/' + i.identifiant">Découverte</a></div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="icon"></div>
+    <div class="icon"></div>
+</section>
+<!-- <section>
+        <div class="col-4 border p-0" *ngFor="let i of parent_road_list">
         <div [style]="{'background-image': 'url(' + i.presentation_image + ')'}" class="contain">
             <div class="linear">
                 <h3>Nom : {{ i.name }}</h3>
@@ -11,5 +29,4 @@
             </div>
         </div>
     </div>
-</section>
-<!-- ajout de fonction avec l'identifant non afficher  -->
+</section> -->

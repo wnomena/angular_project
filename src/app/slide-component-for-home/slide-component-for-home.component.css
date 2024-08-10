@@ -1,4 +1,38 @@
-section,img {
-    width: 100%;
-    height: 100vh;
+.row .col-12 .row .col-12 {
+    height: 95vh;
+    /* border: 2px solid; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.row .col-12 .row .col-12 .container h1{
+    font-size: 80px;
+    font-weight: bold;
+}
+.row .col-12 .row .items-1 {
+    background-image: url(./manambolo_copie.jpg);
+}
+.row .col-12 .row .items-2 {
+    background-image: url(./DSCF2672.JPG);
+}
+.row .col-12 .row .items-3 {
+    background-image: url(./vecteezy_fresh-green-fields-on-a-bright-day_3827905.jpg);
+}
+.row .col-12 .row {
+    animation-name: slide;
+    animation-duration: 15s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes slide {
+    0%,33% {
+        transform: translateX(0);
+    }
+    39%,66% {
+        transform: translateX(-100%);
+    }
+    70%,100% {
+        transform: translateX(-200%);
+    }
 }

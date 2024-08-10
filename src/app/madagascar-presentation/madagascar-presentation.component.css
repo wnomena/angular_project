@@ -1,0 +1,9 @@
+section .col-12 {
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+}
+section .col-12 h4 {
+    font-family: "Calibri", 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}

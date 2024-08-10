@@ -1,0 +1,50 @@
+section {
+    height: 40vh;
+    padding: 5px 20px;
+    scrollbar-color: rgb(6, 102, 212) gray;
+    scrollbar-width: thin;
+}
+section .items-1 {
+    background-image: url(./vecteezy_lemur.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+section .items-2 {
+    background-image: url(./IMG_20230923_093750_370.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+section .items-3 {
+    background-image: url(./vecteezy_cameleon.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+section .items-4 {
+    background-image: url(./voay.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+section .items-5 {
+    background-image: url(./IMG_20230923_143321_3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+section .items-6 {
+    background-image: url(./IMG_20230923_094118_767.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+section .items-7 {
+    background-image: url(./couche\ soleil\ baobab.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    scrollbar-width: 1px;
+    scroll-behavior: smooth; 
+}

@@ -41,14 +41,12 @@ export class commentary_model {
         this.string_commentary = e
     }
 }
-class presentation_image {
-    image : String
-    file_name : String
-    extention_file_name : String
-    constructor(a:String,b:String,c:String){
-        this.image = a
-        this.file_name = b
-        this.extention_file_name = c
+export class presentation_image {
+    name : String
+    src : String
+    constructor(a:String,b:String){
+        this.name = a
+        this.src= b
     }
 }
 export class parent_road_list {
@@ -86,33 +84,33 @@ class image {
     }
 }
 export function Month(number : number) {
-    if(number == 1) return "Janv"
-    else if(number == 2) return "Fev"
-    else if(number == 3) return "Mar"
-    else if(number == 4) return "Avr"
-    else if(number == 5) return "Mai"
-    else if(number == 6) return "Juin"
-    else if(number == 7) return "Juil"
-    else if(number == 8) return "Aout"
-    else if(number == 9) return "Sept"
-    else if(number == 10) return "Oct"
-    else if(number == 11) return "Nov"
-    else if(number == 12) return "Dec"
+    if(number == 1) return "January"
+    else if(number == 2) return "February"
+    else if(number == 3) return "March"
+    else if(number == 4) return "April"
+    else if(number == 5) return "May"
+    else if(number == 6) return "June"
+    else if(number == 7) return "July"
+    else if(number == 8) return "August"
+    else if(number == 9) return "September"
+    else if(number == 10) return "October"
+    else if(number == 11) return "November"
+    else if(number == 12) return "December"
     else return false
 }
 export function inversed_month(month : string) {
-    if(month == "Janv") return 1
-    else if(month == "Fev") return 2
-    else if(month == "Mar") return 3
-    else if(month == "Avr") return 4
-    else if(month == "Mai") return 5
-    else if(month == "Juin") return 6
-    else if(month == "Juil") return 7
-    else if(month == "Aout") return 8
-    else if(month == "Sept") return 9
-    else if(month == "Oct") return 10
-    else if(month == "Nov") return 11
-    else if(month == "Dec") return 12
+    if(month == "January") return 1
+    else if(month == "February") return 2
+    else if(month == "March") return 3
+    else if(month == "April") return 4
+    else if(month == "May") return 5
+    else if(month == "June") return 6
+    else if(month == "July") return 7
+    else if(month == "August") return 8
+    else if(month == "September") return 9
+    else if(month == "October") return 10
+    else if(month == "November") return 11
+    else if(month == "December") return 12
     else return false
 }
 export class indexedDB_model {
@@ -140,8 +138,9 @@ export class child_road_list {
     difficulty : number
     like_by_membes : like[]
     confort : number
+    period : string
 
-    constructor(a:string,b : string, c: number, d : string, e : string, f : number,g : number,h : like[],i : number) {
+    constructor(a:string,b : string, c: number, d : string, e : string, f : number,g : number,h : like[],i : number,j : string) {
         this.name = a
         this.description = b
         this.distance = c
@@ -151,6 +150,7 @@ export class child_road_list {
         this.difficulty = g
         this.like_by_membes = h
         this.confort = i
+        this.period = j
     }
 }
 export class fetch_clild_road {
@@ -169,5 +169,15 @@ export class fetch_clild_road_2 {
     constructor(a : string,data : child_road_list) {
         this.message = a
         this.data = data
+    }
+}
+export class observable {
+    next: void
+    err : void
+    complete : void
+    constructor(x : void,err : void, complete : void) {
+        this.next = x
+        this.err = err
+        this.complete = complete
     }
 }

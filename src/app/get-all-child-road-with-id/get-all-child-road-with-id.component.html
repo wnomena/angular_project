@@ -1,8 +1,10 @@
-<section class="container w-full m-0">
-    <div class="d-flex justify-content-center" *ngFor="let i of parent_road_list">
-        <div class="1 border bg-secondary border p-0 m-0 col-4">
-            <img class="h-full" src="" alt="" srcset="">
+<section class="row p-0">
+    <div class="col-12 border"><div class="d-flex p-0 m-0"><div class="col-4 border p-0 m-0" *ngFor="let i of value_to_show"><div class="d-flex flex-column p-0 m-0 gap-2 rounded
+        " [style]="{'background-image': 'url(' + i.presentation_image + ')'}"><div class="hover m-0 p-0"><div class="m-0 p-0">
+            <div class="text-light mt-1">Nom : {{ i.name }}</div><div class="text-light">A partir de {{ i.price }} <i class="bi bi-currency-pound"></i></div><div class="d-flex justify-content-end p-3">
+                <div class="button_slide slide_down"><a class="text-decoration-none text-light" [href]="'public/information/' + i.name">Voir plus</a><i class="bi bi-chevron-double-right"></i></div>
         </div>
-    </div>
+              </div></div></div></div>
+                </div></div>
 </section>
-<!-- ajout de fonction avec l'identifant non afficher  -->
+<app-internal-footer></app-internal-footer>

@@ -1,0 +1,53 @@
+<section class="row m-1 p-1">
+    <div class="col-12 large-text">
+        <div class="row">
+            <div class="col-8">
+                <h2>{{ value_to_show?.name }}</h2>
+                <div class="col-12">{{value_to_show?.description}}</div>
+            </div>
+            <div class="col-4 ps-2  border rounded">
+                <div class="col-12 m-1">
+                    <i class="bi bi-geo-alt-fill"> Distance à parcourir : {{ value_to_show?.distance }} Km</i>
+                </div>
+                <div class="col-12 m-1">
+                    <i class="bi bi-clock-fill"> Durée total : {{ value_to_show?.sejour_delay }}</i>
+                </div>
+                <div class="col-12 m-1">
+                    <i class="bi bi-calendar-plus"> Période : {{ value_to_show?.period }}</i>
+                </div>
+                <div class="col-12 m-1">
+                    <i class="bi bi-graph-up-arrow"> Difficulté : <progress class="pt-2" id="file" max="100" [value]="value_to_show?.difficulty">yujfgy</progress>
+                    </i>
+                </div>
+                <div class="col-12 m-1">
+                    <i class="bi bi-body-text"> Confort : <progress class="pt-2" id="file" max="100" [value]="value_to_show?.confort">yujfgy</progress>
+                    </i>
+                </div>
+                <div class="col-12 mt-4 mb-2 fs-3">
+                    <i class="bi bi-wallet"> A partir de {{ value_to_show?.price }} <i class="bi bi-currency-pound"></i></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 bg-transparent">
+        <h3 class="text-decoration-underline text-green text-success">ITINERAIRE</h3>
+        <p>Voici un apreçu du trajet <i class="bi bi-car-front-fill"></i></p>
+        <div class="col-12 d-flex justify-content-center">
+            <div class="col-9 border">
+                <img src="" alt="" srcset="">
+                <div class="col-12">
+                        <h3 class="text-decoration text-center">Toutes autres informations complementaire</h3>
+                        <div class="col-12 d-flex justify-content-center">
+                            <p class="col-8 text-center" > Pour mieux organiser votre voyage, nous vous invitons à nous joindre à l'aide de ces moyens de contact cité ci dessous</p>
+                        </div>
+                        <div class="bg d-flex justify-content-center gap-2 mb-1">
+                            <div class="bg-primary"><i class="bi bi-telephone-fill"> +261 34 10 512 08</i></div>
+                            <div class="bg-primary"><i class="bi bi-envelope-at-fill"> wnomena</i></div>
+                            <div class="bg-primary"><i class="bi bi-currency-pound"> Demander un devis</i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<app-internal-footer></app-internal-footer>

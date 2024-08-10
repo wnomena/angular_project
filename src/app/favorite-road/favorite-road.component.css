@@ -1,0 +1,84 @@
+svg {
+    fill: currentColor;
+    margin: 20px auto;
+}
+
+p {
+    font-weight: bold;
+    margin: 0 25px;
+}
+.row {
+    overflow-x: hidden;
+    outline: none;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.row .col-12 h1 {
+    border-bottom: 3px solid gray;
+}
+.d-flex .col-4 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+    display: block;
+
+}
+.row .col-8 .d-flex {
+    overflow: hidden;
+    outline: none;
+}
+.row .col-8 .d-flex .col-4 {
+    font-weight: bold;
+    transition: 1s;
+    overflow: hidden;
+    outline: none;
+}
+.row .col-8 .d-flex .col-4 .d-flex .hover {
+    box-shadow: inset 0 0 0 0 #353434;
+    transition: 0.3s;
+ }
+ .row .col-8 .d-flex .col-4:hover > .d-flex .hover {
+    box-shadow: inset 0 100px 0 0 #353434;
+    transition: 0.3s;
+ }
+.row .col-8 .d-flex .col-4 .d-flex {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.row .col-8 .d-flex .col-4:hover > .d-flex {
+    transition: 0.3s;
+   transform: scale(1.1);
+}
+.row .col-8 .d-flex .col-4:hover > .d-flex .hover {
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+.row .col-8 .d-flex .col-4:hover > .d-flex .hover .text-light {
+    margin-left: 2px;
+}
+.opacity-50:hover {
+    fill: #ffff00;
+}
+.button_slide {
+    color: white;
+    border: 2px solid white;
+    border-radius: 0px;
+    height: fit-content;
+    padding: 5px;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #353434;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    font-family: cursive;
+  }

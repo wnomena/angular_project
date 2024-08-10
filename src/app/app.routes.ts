@@ -17,14 +17,28 @@ import { ListOfParentRoadUpdateAndDeleteComponent } from './list-of-parent-road-
 import { FooterComponent } from './footer/footer.component';
 import { InternalFooterComponent } from './internal-footer/internal-footer.component';
 import { ListOfChildRoadToDeleteAndUpdateComponent } from './list-of-child-road-to-delete-and-update/list-of-child-road-to-delete-and-update.component';
+import { AlbumGridComponent } from './album-grid/album-grid.component';
+import { FavoriteRoadComponent } from './favorite-road/favorite-road.component';
+import { SomeImageComponent } from './some-image/some-image.component';
+import { MadagascarPresentationComponent } from './madagascar-presentation/madagascar-presentation.component';
+import { GetAllChildRoadWithIdComponent } from './get-all-child-road-with-id/get-all-child-road-with-id.component';
+import { DevisAndContactComponent } from './devis-and-contact/devis-and-contact.component';
+import { TextComponentForChildRoadComponent } from './text-component-for-child-road/text-component-for-child-road.component';
+import { AssemblyHomeComponent } from './assembly-home/assembly-home.component';
+import { LinkForAllChildRoadComponent } from './link-for-all-child-road/link-for-all-child-road.component';
+
 
 export const routes: Routes = [{
-    path : "ajout",
-    component : GetAllParentRoadComponent
+    path : "",
+    component : AssemblyHomeComponent
 },
 {
-    path : "rakoto/:id",
-    component : ListOfChildRoadToDeleteAndUpdateComponent
+    path : "public/all_child/:id",
+    component : GetAllChildRoadWithIdComponent
+},
+{
+    path : "public/information/:name",
+    component : TextComponentForChildRoadComponent
 },
 {
     path : "login/subscription",
@@ -36,9 +50,9 @@ export const routes: Routes = [{
 {
     path: "subscription",
     component : SubscriptionAdminAndMemberComponent
+}]
 },
 {
     path : "confirmation/:complet_name/:mail",
     component : PassComponentForSubsxriptionComponent  
-}]
 }];
