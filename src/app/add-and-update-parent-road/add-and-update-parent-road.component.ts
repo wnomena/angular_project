@@ -1,23 +1,35 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { HoverForMenuPcDirective } from '../hover-for-menu-pc.directive';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Month } from '../../simple_animation/animation';
+import { inversed_month, Month, parent_road_list } from '../../simple_animation/animation';
 import axios  from "axios"
+import { ActivatedRoute, Router } from '@angular/router';
+import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
 // import { FileSystem } from "@angular/core"
 // import { FormData, parent_road_list } from '../../simple_animation/animation';
 
 @Component({
   selector: 'app-add-and-update-parent-road',
   standalone: true,
-  imports: [HoverForMenuPcDirective],
+  imports: [HoverForMenuPcDirective,InternalFooterComponent],
   templateUrl: './add-and-update-parent-road.component.html',
   styleUrl: './add-and-update-parent-road.component.css'
 })
-export class AddAndUpdateParentRoadComponent{
-  constructor(private http : HttpClient) {}
-  title:String = "Ajout de nouveau circuit parent"
+export class AddAndUpdateParentRoadComponent implements OnInit{
+  value_to_show: parent_road_list | undefined
+  constructor(private http : HttpClient,private router : ActivatedRoute,private redirect : Router) {}
+  ngOnInit(): void {
+    if(this.router.snapshot.paramMap.get("id") !== "0") {
+      this.title = "Uptade road"
+      this.http.get<{data : parent_road_list[]}>(`http://localhost:5000/public_get/parent_way/one_road/${this.router.snapshot.paramMap.get("id")}`).subscribe({next : a => {
+        Array.from(a.data).forEach((b)=> this.value_to_show = b)
+      }})
+    }
+  }
+  title:String = "Add new Road"
   form_data = new FormData()
-  async validate_road(nom : string,confort : string,prix : string,difficult : string,period_b:string,period_e:string,img:HTMLInputElement,desc:string) {
+  // headers : HttpHeaders = new HttpHeaders().set("Content-Type","multipart/form-data")
+  async validate_road(nom : string,prix : string,period_b:string,period_e:string,img:HTMLInputElement,desc:string,diff : string,confort : string) {
     if(img.files){
       this.form_data.append("image",img.files[0])
     }
@@ -25,49 +37,23 @@ export class AddAndUpdateParentRoadComponent{
         name: nom,
         about_all_road : desc,
         price : prix,
-        difficulty : difficult,
-        period : `${Month(parseInt(period_b))} ${Month(parseInt(period_e))}`
+        period : `${Month(parseInt(period_b))} ${Month(parseInt(period_e))}`,
+        difficulty : diff,
+        confort : confort
       }
       this.form_data.append("body",JSON.stringify(body))
-      this.form_data.forEach((e)=>{
-        console.log(e)
+      this.modif_or_add()
+    }
+    modif_or_add() {
+      if(this.router.snapshot.paramMap.get("id") == "0") this.http.post("http://localhost:5000/utilisateurs/add_avant_post/by_user",this.form_data).subscribe({next : a => this.redirect.navigate(["admin/home/list-of-parent"]),error : b => console.log(b)})
+      else this.http.put(`http://localhost:5000/utilisateurs/update_parent_road/by_user/${this.router.snapshot.paramMap.get("id")}`,this.form_data).subscribe((a)=> {
+        this.redirect.navigate(["admin/home/list-of-parent"])
       })
-      const config = {
-        method: 'POST',
-        url: "http://localhost:5000/utilisateurs/add_avant_post/by_user",
-        data: this.form_data,
-        headers : {
-          'Content-Type':'multipart/form-data',
-        }
-      };
-      axios(config).then(a=>{console.log(a)})
-      // this.http.post("http://localhost:5000/utilisateurs/add_avant_post/by_user",this.form_data,{headers : headers_http.set("Content-Type","multipart/form-data")}).subscribe((e)=> console.log(e))
+    }
+    inversed_month2(a:string | undefined, b : number) {
+     return inversed_month(a ? a.split(" ")[b] : "undefined")
+    }
+    retour() {
+      this.redirect.navigate(["admin/home/list-of-parent"])
     }
   }
-// import { Component, OnInit, OnDestroy } from '@angular/core';
-// import { Socket } from 'ngx-socket-io';
-
-// @Component({
-//   selector: 'app-my-component',
-//   templateUrl: './my-component.html',
-//   styleUrls: ['./my-component.css']
-// })
-// export class MyComponent implements OnInit, OnDestroy {
-
-//   constructor(private socket: Socket) { }
-
-//   ngOnInit(): void {
-//     // Establish the WebSocket connection
-//     this.socket.io().connect('https://your-server-url');
-
-//     // Handle events from the server
-//     this.socket.on('message', (message: string) => {
-//       console.log('Message received from server:', message);
-//     });
-//   }
-
-//   ngOnDestroy(): void {
-//     // Disconnect from the WebSocket server
-//     this.socket.disconnect();
-//   }
-// }

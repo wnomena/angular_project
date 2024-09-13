@@ -15,7 +15,6 @@ export class FavoriteRoadComponent implements OnInit {
   constructor(private http : HttpClient) {}   
   ngOnInit(): void {
     this.http.get<{data : child_road_list[]}>("http://localhost:5000/get_all/favorite_road").subscribe((a)=> {
-      console.log(a)
       for(let i of a.data) {
         this.value_to_show.push(i)
       }

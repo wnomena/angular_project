@@ -20,7 +20,9 @@ export class ChoiceBetweenAdminOrMemberComponent implements OnInit {
   @ViewChild("admin") adminRef: ElementRef | undefined;
   change_color(el:HTMLDivElement,ad:HTMLDivElement): void {
     el.style.backgroundColor = "#076eaa"
-    ad.style.backgroundColor = "#383535"
+    el.style.color = "#d3cccc"
+    ad.style.backgroundColor = "white"
+    ad.style.color = "black"
     if(el.className.split(" ").filter((a) => a == "selected").length > 0){
       while (bool.length > 0) {
         bool.pop()

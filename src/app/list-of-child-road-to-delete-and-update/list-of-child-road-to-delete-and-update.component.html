@@ -1,11 +1,12 @@
 <section>
+    <div class="col-12 d-flex justify-content-end"><p (click)="add_new()" >Ajout</p></div>
     <div class="img_contain">
-        <img [src]="img" alt="dfgfdg" srcset="">
+        <img [src]="img" alt="" srcset="">
     </div>
     <div class="d-flex flex-column w-50 p-1 h-auto">
         <div class="border border-secondary overflow-hidden d-flex align-items-center justify-content-around m-2 h-5" *ngFor="let i of child_road_list"> 
             <div (click)="change_image(i.presentation_image)" class="border border-secondary overflow-hidden d-flex align-items-center justify-content-around w-100 ">
-                <p>Nom : {{i.name}}</p><p>Difficulté : {{i.difficulty}}</p><p>Prix : {{i.price}}</p><p>Distance : {{i.distance}}</p><p>Delais : {{i.sejour_delay}}</p> <p class="modifier">Modifier</p>
+                <p>Nom : {{i.name}}</p><p>Difficulté : {{i.difficulty}}</p><p>Prix : {{i.price}}</p><p>Distance : {{i.distance}}</p><p>Delais : {{i.sejour_delay}}</p> <p (click)="update(i.name)" class="modifier"  >Modifier</p>
             </div>
         </div>
     </div>

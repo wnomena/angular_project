@@ -1,8 +1,8 @@
-.row .col-8 {
+.row .col-lg-8 {
     box-shadow: inset 0 0 2px 1px green;
     margin-top: 10px;
 }
-.row .col-8 .col-12 .col-12 .border {
+.row .col-lg-8 .col-12 .col-12 .border {
     color: lightgoldenrodyellow;
     font-weight: 500;
     box-shadow: none;

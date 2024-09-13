@@ -1,32 +1,24 @@
-<section class="row border">
-    <div class="col-12 text-center bg-light">
-        <h3>Visitez notre îles et vivez de nouvelle sensation</h3>
-        <h5>Cap Sur Mada vous offres des voyages inoubliables dans plusieurs endroits aux choix.</h5>
+<section class="row bg-light">
+    <div class="col-12 text-center">
+        <h3>Visit our islands and experience new sensations.</h3>
+        <h5>Cap Sur Mada offers you unforgettable trips to several destinations of your choice.</h5>
     </div>
-    <div class="col-12 d-flex gap-5 flex-nowrap justify-content-center overflow-x-scroll">
-        <div class="col-3 border rounded" *ngFor="let i of parent_road_list" [style]="{'background-image': 'url(' + i.presentation_image + ')'}">
-            <div class="linear p-2">
-                <h3>Nom : {{ i.name }}</h3>
-            <h4> A partir de <i class="bi bi-currency-pound"> {{ i.price }}</i></h4>
-            <div class="d-flex justify-content-end">
-                <div class="button_slide slide_down text-white"><a class="text-decoration-none text-light" [href]="'public/all_child/' + i.identifiant">Découverte</a></div>
-            </div>
-            </div>
-        </div>
+        <div class="d-grid col-11 m-auto">
+            <div class="icon items-1"><i class="bi bi-arrow-left-circle-fill text-primary d-flex align-items-center" (click)="preview(scroll,$event)"></i></div>
+                <div #scroll class="col-12 d-flex flex-nowrap justify-content-around overflow-x-scroll overflow-y-hidden">
+                    <div class="col-lg-3 h-lg-100 h-md-50 h-10 col-md-6 col-sm-10 col-12 border p-0 m-0 overflow-hidden rounded" *ngFor="let i of parent_road_list">
+                        <div [style]="{'background-image': 'url(' + i.presentation_image + ')'}" class="col-12 h-100">
+                            <div class="linear p-2 text-light">
+                                <h3>Name : {{ i.name }}</h3>
+                            <h4> A partir de <i class="bi bi-currency-pound"> {{ i.price }}</i></h4>
+                            <div class="d-flex justify-content-end">
+                                <div class="button_slide slide_down text-white"><a class="text-decoration-none text-light" [href]="'public/all_child/' + i.identifiant">Découverte</a></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="icon items-2"><i class="bi bi-arrow-right-circle-fill text-primary d-flex align-items-center" (click)="next(scroll,$event)"></i></div>
     </div>
-    <div class="icon"></div>
-    <div class="icon"></div>
 </section>
-<!-- <section>
-        <div class="col-4 border p-0" *ngFor="let i of parent_road_list">
-        <div [style]="{'background-image': 'url(' + i.presentation_image + ')'}" class="contain">
-            <div class="linear">
-                <h3>Nom : {{ i.name }}</h3>
-            <h4>Description :  {{ i.about_all_road }}</h4>
-            <div class="d-flex justify-content-end">
-                <div class="button_slide slide_down">Découvrir</div>
-            </div>
-            </div>
-        </div>
-    </div>
-</section> -->
+

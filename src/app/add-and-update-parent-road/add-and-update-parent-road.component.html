@@ -1,49 +1,39 @@
 <section class="container-fluid w-full m-0">
     <div class="d-flex justify-content-between w-full m-0 p-0">
         <h3>{{ title }}</h3>
-        <span class="d-flex bg-primary"><i class="bi bi-chevron-left"> Retour</i></span>
+        <span class="d-flex bg-primary"><i (click)="retour()" class="bi bi-chevron-left"> Retour</i></span>
     </div>
     <div class="bg-transparent w-100 m-top-10 d-flex flex-wrap">
         <div class="col-6 d-flex bg-transparent flex-row">
             <div class="bg-transparent d-flex flex-column" >
                 <label class="text-dark" for="">Nom</label>
-                <input #nom class="border-top-0 border-start-0 border-end-0 " type="text">
+                <input #nom [value]="value_to_show?.name" class="border-top-0 border-start-0 border-end-0 " type="text">
             </div>
             <!-- <div class="bg-transparent d-flex flex-column m-10" >
-                <label class="text-dark" for="">Distance à parcourir</label>
-                <input class="border-top-0 border-start-0 border-end-0 " type="number">
-            </div> -->
-            <div class="bg-transparent d-flex flex-column m-10" >
                 <label class="text-dark" for="">Confort</label>
                 <input appHoverForMenuPc="99" #confort class="border-top-0 border-start-0 border-end-0" type="number" max="100" min="1">
-            </div>
-            <div class="bg-transparent d-flex flex-column m-10" >
-                <label class="text-dark" for="">Prix</label>
-                <input #price nomena_walker class="border-top-0 border-start-0 border-end-0" type="number">
-            </div>
-            <div class="bg-transparent d-flex flex-column m-10" >
-                <label class="text-dark" for="">Difficulté</label>
-                <input #difficult appHoverForMenuPc="99" class="border-top-0 border-start-0 border-end-0" type="number" max="100" min="1">
-            </div>
-            <!-- <div class="bg-transparent d-flex flex-column m-10" >
-                <label class="text-dark" for="">Durée total</label>
-                <div class="d-flex bg-transparent flex-column">
-                    <span></span>
-                    <div class="d-flex bg-transparent flex-row">
-                        <input class="border" type="number" max="12" min="1" placeholder="Jours">
-                        <input class="border" type="number" max="12" min="1" placeholder="Nuit">
-                    </div>
-                </div>
             </div> -->
+            <div class="bg-transparent d-flex flex-column m-10">
+                <label class="text-dark" for="">Prix</label>
+                <input [value]="value_to_show?.price" #price nomena_walker class="border-top-0 border-start-0 border-end-0" type="number">
+            </div>
             <div class="bg-transparent d-flex flex-column m-10" >
                 <label class="text-dark" for="">Période Jan-Fev </label>
                 <div class="d-flex bg-transparent flex-column">
                     <span></span>
                     <div class="d-flex bg-transparent flex-row">
-                        <input #period_b appHoverForMenuPc="12" class="border" type="number" max="12" min="1" placeholder="05">
-                        <input #period_e appHoverForMenuPc="12" class="border" type="number" max="12" min="1" placeholder="07">
+                        <input [value]="inversed_month2(value_to_show?.period,0)" #period_b appHoverForMenuPc="12" class="border" type="number" max="12" min="1" placeholder="05">
+                        <input [value]="inversed_month2(value_to_show?.period,1)" #period_e appHoverForMenuPc="12" class="border" type="number" max="12" min="1" placeholder="07">
                     </div>
                 </div>
+            </div>
+            <div class="bg-transparent d-flex flex-column m-10">
+                <label class="text-dark" for="">Dificulty</label>
+                <input [value]="value_to_show?.difficulty" #difficulty appHoverForMenuPc="99" class="border-top-0 border-start-0 border-end-0" type="number">
+            </div>
+            <div class="bg-transparent d-flex flex-column m-10">
+                <label class="text-dark" for="">Confort </label>
+                <input [value]="value_to_show?.confort" #confort appHoverForMenuPc="99" class="border-top-0 border-start-0 border-end-0" type="number">
             </div>
             <div class="bg-transparent d-flex flex-column m-10" >
                 <label class="text-dark" for="">L'image</label>
@@ -52,11 +42,11 @@
         </div>
         <div class="container-fluid bg-transparent d-flex flex-column">
                 <label class="text-dark" for="">La description de ce circuit</label>
-                <textarea #desc class="rounded" name="" id="" placeholder="La description de ce circuit"></textarea>
+                <textarea [value]="value_to_show?.about_all_road" #desc class="rounded" name="" id="" placeholder="La description de ce circuit"></textarea>
         </div><br>
         <div class="bg-transparent d-flex flex-row">
             <div class="bg-transparent d-flex w-50">
-                <button (click)="validate_road(nom.value,confort.value,price.value,difficult.value,period_b.value,period_e.value,img,desc.value)" id="button">Enregistrer</button>
+                <button (click)="validate_road(nom.value,price.value,period_b.value,period_e.value,img,desc.value,difficulty.value,confort.value)" id="button">Enregistrer</button>
             </div>
             <div class="bg-transparent d-flex justify-content-start w-50">
                 <button id="cancel">Annuler</button>
@@ -65,3 +55,4 @@
         <!-- <textarea name="" id=""></textarea> -->
     </div>
 </section>
+<app-internal-footer></app-internal-footer>

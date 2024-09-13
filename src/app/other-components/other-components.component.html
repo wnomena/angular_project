@@ -1,55 +1,43 @@
 <section class="row">
-    <div #div class=" bg-primary col-12">
+    <div #div class=" bg-primary col-12 pt-2 pb-2">
         <div class="container">
             <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
                 <div class="col-lg-12 d-block">
-                    <div class="row d-flex">
-      
-                        <div class="col-md pr-4 d-flex topper align-items-center">
+                    <div class="row d-none d-md-flex justify-content-between">
+                        <div class="col-6 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                            <span class="text">Aventure et sensation forte.</span>
+                            <span class="text">Adventure & Sensation in Madagascar.</span>
                         </div>
       
-                        <div class="col-md pr-4 d-flex topper align-items-center">
+                        <div class="col-lg-3 pr-4 d-lg-flex d-none topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
                             <span class="text"> <i class="fas fa-paper-plane"><i class="bi bi-send-fill"></i> {{mail}}</i></span>
                         </div>
-       
-                        <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+                        <div class="col-4 col-lg-3 pr-4 d-none d-lg-flex d-md-flex topper align-items-center text-lg-right">
                             <span class="text"><i class="bi bi-telephone-fill"> +261 38 57 589 64</i></span>
                         </div>
-                        
                     </div>
                 </div>
             </div>
           </div>
       </div>
-      <div class="bgc-undefined text-light">
-          <div class="container d-flex justify-content-between ">
-              <div class="name container ">
-                  <h3>CAP SUR MADA</h3>
+      <div class="bgc-undefined text-light col-12">
+          <div class="d-flex justify-content-between col-12">
+              <div class="p-0 m-0">
+                  <h3 class="m-1 p-0 h-auto fs-lg-3 fs-md-4 fs-5">CAP SUR MADA</h3>
               </div>
-              <div class="full-screen container p-0">
-                  <div class="d-flex justify-content-end m-0">
-                      <span class="d-flex justify-content-center h-10"><i class="bi bi-house-door"> Acceuil</i></span>
-                      <span class="d-flex justify-content-center"><i class="bi bi-signpost-split">  Nos circuits</i></span>
-                      <span class="d-flex justify-content-center"> <i class="bi bi-globe2"> Connexion</i> </span>
-                  </div>
-              </div>
-              <div class="phone-screen">
-                  <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle w-200" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Menu
-                      </button>
-                    
-                      <ul class="dropdown-menu p-0">
-                        <li class="w-200"><span class="d-flex justify-content-center h-10"><i class="bi bi-house-door"> Acceuil</i></span></li>
-                        <li><span class="d-flex justify-content-center"><i class="bi bi-signpost-split"> Nos circuit</i></span></li>
-                        <li><span class="d-flex justify-content-center"><i class="bi bi-globe2"> Connexion</i></span></li>
-                        <li><span class="d-flex justify-content-center"><i class="bi bi-telephone-fill"> Nous contacter</i></span></li>
-                      </ul>
-                    </div>
+              <div class="col-6 h-auto p-0">
+                <div class="full-screen col-12 p-0 m-0 d-flex">
+                    <span class="d-flex justify-content-center col-3  ms-1 p-1"><a class="text-light text-decoration-none d-flex col-12 justify-content-center h-inherit m-0 align-items-center button" routerLink="/"><i class="bi bi-house-door"></i> <p class="m-0 d-lg-block d-md-none d-none"> Home </p></a></span>
+                    <span class="d-flex justify-content-center  col-3 ms-1 p-1"><a class="text-light text-decoration-none d-flex col-12 justify-content-center h-auto m-0 align-items-center button" routerLink="/public/all_child/0"><i class="bi bi-signpost-split"></i> <p class="m-0 d-lg-block d-md-none d-none"> Nos circuits</p></a></span>            
+                @if (ngif) {
+                    <span class="d-flex align-items-center justify-content-center flex-nowrap col-4 ms-1 p-1" data-bs-toggle="collapse" data-bs-target="#collapseExample"><i type="button" class="bi bi-people-fill"></i><small class="d-lg-flex align-items-center d-md-none d-none ms-1">{{ ngif }}</small></span>
+                }@else {
+                    <span class="d-flex justify-content-center  col-3 ms-1 p-1"><a class="text-light text-decoration-none d-flex col-12 justify-content-center h-auto m-0 align-items-center button" routerLink="/login/subscription/login"><i class="bi bi-globe2"></i> <p class="m-0 d-lg-block d-md-none d-none">Connexion</p></a></span>
+                }
+            </div>
               </div>
           </div>
       </div>
+    <app-menu-for-all-member-or-admin-action class="collapse" id="collapseExample"></app-menu-for-all-member-or-admin-action>
 </section>

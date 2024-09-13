@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './devis-and-contact.component.css'
 })
 export class DevisAndContactComponent {
-
+  mail : string = "wnomena58@gmail.com"
 }

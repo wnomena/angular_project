@@ -1,10 +1,20 @@
-<section class="row p-0">
-    <div class="col-12 border"><div class="d-flex p-0 m-0"><div class="col-4 border p-0 m-0" *ngFor="let i of value_to_show"><div class="d-flex flex-column p-0 m-0 gap-2 rounded
-        " [style]="{'background-image': 'url(' + i.presentation_image + ')'}"><div class="hover m-0 p-0"><div class="m-0 p-0">
-            <div class="text-light mt-1">Nom : {{ i.name }}</div><div class="text-light">A partir de {{ i.price }} <i class="bi bi-currency-pound"></i></div><div class="d-flex justify-content-end p-3">
-                <div class="button_slide slide_down"><a class="text-decoration-none text-light" [href]="'public/information/' + i.name">Voir plus</a><i class="bi bi-chevron-double-right"></i></div>
-        </div>
-              </div></div></div></div>
-                </div></div>
+<section class="row">
+    <div *ngFor="let i of parent_road_list" class="col-lg-10 m-auto d-flex mt-3 mb-3 p-1">
+        @if(i.id % 2) {
+            <div class="col-lg-4 bg-primary " [style]="{'background-image' : 'url(' + i.presentation_image + ')'}"></div>
+            <div class="col-lg-7 m-auto">
+                <!-- <div class="d-flex"> <h4 class="fw-bold m-0 p-0">Name : {{ i.name }}</h4></div> -->
+                <div><h5 class="fw-bold m-0 p-0"> Description : </h5> <small  class="ms-1">{{ i.description }}</small></div>
+                <div class="d-flex justify-content-end"> <a class="text-decoration-none" [href]="'public/information/' + i.name">More ..</a></div>
+            </div>
+        }
+        @else {
+            <div class="col-lg-7 m-auto">
+                <div ><h5 class="fw-bold m-0 p-0"> Description : </h5> <small class="ms-1">{{ i.description }}</small></div>
+                <div class="d-flex justify-content-end"> <a class="text-decoration-none text-primary" [href]="'public/information/' + i.name">More ..</a></div>
+            </div>
+            <div class="col-lg-4 bg-primary ms-1" [style]="{'background-image' : 'url(' + i.presentation_image + ')'}"></div>
+        }
+    </div>
 </section>
 <app-internal-footer></app-internal-footer>

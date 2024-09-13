@@ -1,4 +1,4 @@
-.choice-container div{
+/* .choice-container div{
     background-color: #383535;
     color: #d3cccc;
     box-sizing: border-box;
@@ -8,11 +8,14 @@
     outline: none;
     overflow: hidden;
     border-radius: 10px;
-    /* border: 3px solid red */
+    /* border: 3px solid red
     font-weight: bold;
 
+} */
+.row .col-6 {
+    cursor: pointer;
 }
-.choice-container .selected {
+.row .col-6 .selected {
     background-color: #076eaa;
     color: #d3cccc;
     box-sizing: border-box;
@@ -20,4 +23,7 @@
 }
 section.container {
     margin-top: 5px;
+}
+.row .d-flex {
+    border-radius: 30px;
 }

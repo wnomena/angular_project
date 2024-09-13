@@ -1,0 +1,8 @@
+<div class="row bg-transparent p-0 m-0">
+    <div class="col-12 d-flex p-0 m-0">
+        <div (click)="navigation()" class="col-lg-4 col-4 h-auto"><p *ngIf="member_or_admin == '1'" class="fw-bold border d-flex justify-content-center align-items-center bg-success mb-0"><i class="bi bi-person-fill-gear"> Page admin</i></p><p *ngIf="member_or_admin == '0'" class="fw-bold border d-flex justify-content-center align-items-center bg-success mb-0"><i class="bi bi-person-fill-gear"> New commentary</i></p></div>
+
+        <div (click)="change_pass()" class="col-lg-4 col-4 h-auto"><p class="fw-bold border d-flex justify-content-center align-items-center bg-success mb-0"><i class="bi bi-gear-fill"> Change pass</i></p></div>
+        <div (click)="deconnexion()" class="col-lg-4 col-4 h-auto"><p class="fw-bold border d-flex justify-content-center align-items-center bg-success mb-0"><i class="bi bi-box-arrow-right"> Log out</i></p></div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.row .col-12 .col-lg-4 {
+    height: 100%;
+    cursor: pointer;
+}
+.row .col-12 .col-4 p {
+    background-color: #198754;
+}
+.row .col-12 .col-4:hover > p {
+    background-color: #0d6efd;
+}
+.row .col-12 .col-4 .fw-bold {
+    height: 100%;
+}

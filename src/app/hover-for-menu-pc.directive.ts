@@ -14,7 +14,6 @@ export class HoverForMenuPcDirective {
   setKeyUp(p0: string) {
     if(this.el.nativeElement.value > parseInt(p0)) {
       this.el.nativeElement.value = parseInt(p0)
-      console.log("mande")
     }
   }
   

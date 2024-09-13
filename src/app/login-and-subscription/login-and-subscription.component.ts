@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginSubComponentComponent } from '../login-sub-component/login-sub-component.component';
 import { bool } from '../../simple_animation/animation';
+import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-and-subscription',
   standalone: true,
-  imports: [LoginSubComponentComponent],
+  imports: [LoginSubComponentComponent,InternalFooterComponent],
   templateUrl: './login-and-subscription.component.html',
   styleUrl: './login-and-subscription.component.css'
 })
-export class LoginAndSubscriptionComponent implements OnInit{
-  ngOnInit(): void {
-    console.log(bool)
-  }
-//0 member -- 1 admin
-
+export class LoginAndSubscriptionComponent {
 }

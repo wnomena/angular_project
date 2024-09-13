@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { commentary_model } from '../../simple_animation/animation';
 import { NgFor } from '@angular/common';
 import { ShowStringCommentaryComponent } from '../show-string-commentary/show-string-commentary.component';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-commentary',
@@ -11,14 +13,18 @@ import { ShowStringCommentaryComponent } from '../show-string-commentary/show-st
   styleUrl: './commentary.component.css'
 })
 export class CommentaryComponent implements OnInit {
-  display:String = "none"
-  top : Number | undefined
-  list_table : commentary_model[] | undefined
+  display:"none" | "flex" = "none"
+  string: String = ""
+  list_table:commentary_model[] = [] 
+  constructor(private http:HttpClient,private router : Router) {}
   ngOnInit(): void {
-    this.list_table = [{_id : "1", id : 1, mail : "wnomena58@gmail.com" , string_commentary : "ras", created : "today"}]
+    let i:any= localStorage.getItem("id") !== null ? localStorage.getItem("id") : undefined
+    if(i) this.http.get<{message : string ,liste :  commentary_model[]}>("http://localhost:5000/get_all_commentary").subscribe((res)=> {
+      for(let i of res.liste) this.list_table.push(i)
+    })
+    else this.router.navigate(["login/subscription/login"])
   }
-  assignment_value(e:MouseEvent) {
-     console.log(e.pageY)
-     console.log(window.screen.height)
+  remise_value(string : String) {
+    this.string = string
   }
 }

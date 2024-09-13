@@ -17,7 +17,6 @@ export class MemberManagerComponent implements OnInit{
   }
   
   deletion_of_commentary_by_id(member_mail:string) {
-    console.log(member_mail)
     //route pour l effacement des donnes via  une requette delete et un identifiant stocker dans un variable local
   }
 }

@@ -1,10 +1,4 @@
-section .bg-primary {
-    width: 100%;
-    padding: 5px;
-
-}
-section .bg-primary span {
-    width: 100%;
-    color: rgb(241, 245, 245);
-    font-weight: bold;
+.row .col-8 {
+    line-height: 4vh;
+    font-weight: 500;
 }

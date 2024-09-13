@@ -1,7 +1,7 @@
 section {
-    height: 40vh;
+    height: 50vh;
     padding: 5px 20px;
-    scrollbar-color: rgb(6, 102, 212) gray;
+    scrollbar-color: red gray;
     scrollbar-width: thin;
 }
 section .items-1 {
@@ -45,6 +45,4 @@ section .items-7 {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;   
-    scrollbar-width: 1px;
-    scroll-behavior: smooth; 
 }

@@ -28,7 +28,7 @@ export class member_model {
 }
 export class commentary_model {
     _id : String
-    id : Number
+    identifiant : Number
     mail : String
     string_commentary : String
     created : String
@@ -36,7 +36,7 @@ export class commentary_model {
     constructor(a:String,b : String , c : Number , d : String , e : String) {
         this._id = a
         this.created = b
-        this.id = c
+        this.identifiant = c
         this.mail = d
         this.string_commentary = e
     }
@@ -56,6 +56,9 @@ export class parent_road_list {
     presentation_image : String
     price : number
     period : string
+    confort : string
+    difficulty : string
+
 
     constructor(a:Number,b : String, c: String, d : String,e:number,f : string){
         this.identifiant = a
@@ -64,6 +67,8 @@ export class parent_road_list {
         this.presentation_image = d
         this.price = e
         this.period = f
+        this.confort = f
+        this.difficulty = f
     }
 }
 export class fetch {
@@ -128,6 +133,33 @@ class like {
         this.mail = a
     }
 }
+export class child_road_for_display {
+    id : number
+    name : string
+    description : string
+    distance : number
+    presentation_image : string
+    sejour_delay : string
+    price : number
+    difficulty : number
+    like_by_membes : like[]
+    confort : number
+    period : string
+
+    constructor(a:string,b : string, c: number, d : string, e : string, f : number,g : number,h : like[],i : number,j : string) {
+        this.id = f
+        this.name = a
+        this.description = b
+        this.distance = c
+        this.presentation_image = d
+        this.sejour_delay = e
+        this.price = f
+        this.difficulty = g
+        this.like_by_membes = h
+        this.confort = i
+        this.period = j
+    }
+}
 export class child_road_list {
     name : string
     description : string
@@ -179,5 +211,17 @@ export class observable {
         this.next = x
         this.err = err
         this.complete = complete
+    }
+}
+export function reload() {
+    location.reload()
+}
+export class typeofquality {
+    title : string
+    content : string
+
+    constructor(a:string) {
+        this.title = a
+        this.content = a
     }
 }

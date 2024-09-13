@@ -26,15 +26,25 @@ import { DevisAndContactComponent } from './devis-and-contact/devis-and-contact.
 import { TextComponentForChildRoadComponent } from './text-component-for-child-road/text-component-for-child-road.component';
 import { AssemblyHomeComponent } from './assembly-home/assembly-home.component';
 import { LinkForAllChildRoadComponent } from './link-for-all-child-road/link-for-all-child-road.component';
+import { MenuForAllMemberOrAdminActionComponent } from './menu-for-all-member-or-admin-action/menu-for-all-member-or-admin-action.component';
+import { OtherComponentsComponent } from './other-components/other-components.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AddNewCommentaryByMemberComponent } from './add-new-commentary-by-member/add-new-commentary-by-member.component';
 
 
 export const routes: Routes = [{
     path : "",
     component : AssemblyHomeComponent
+},{
+    path : "text",
+    component: AddNewCommentaryByMemberComponent 
 },
 {
     path : "public/all_child/:id",
     component : GetAllChildRoadWithIdComponent
+},{
+    path : "commentary/all",
+    component : OtherComponentsComponent
 },
 {
     path : "public/information/:name",
@@ -51,8 +61,34 @@ export const routes: Routes = [{
     path: "subscription",
     component : SubscriptionAdminAndMemberComponent
 }]
+},{
+    path : "change_pass",
+    component : ChangePasswordComponent
 },
 {
     path : "confirmation/:complet_name/:mail",
     component : PassComponentForSubsxriptionComponent  
+},
+{
+    path : "admin/home",
+    component : MenuBarAdminComponent,
+    children : [{
+        path : "list-of-parent",
+        component : ListOfParentRoadUpdateAndDeleteComponent
+    },{
+        path : "list-of-child/:id",
+        component : ListOfChildRoadToDeleteAndUpdateComponent
+    },{
+        path : "update/parent-road/:id",
+        component : AddAndUpdateParentRoadComponent
+    },{
+        path : "update/child-road/:name/:id",
+        component : AddAndUpdateChildRoadComponent
+    },{
+        path : "list-of-commentary",
+        component : CommentaryComponent
+    },{
+        path : "list-of-member",
+        component : MemberManagerComponent
+    }]
 }];

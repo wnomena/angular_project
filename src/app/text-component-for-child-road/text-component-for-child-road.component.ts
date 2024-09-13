@@ -17,10 +17,8 @@ export class TextComponentForChildRoadComponent implements OnInit {
   constructor(private http : HttpClient,private useParams : ActivatedRoute) {}
   ngOnInit(): void {
     this.http.get<fetch_clild_road_2>(`http://localhost:5000/public_get/one_road/${this.useParams.snapshot.paramMap.get("name")}`).subscribe((res)=> {
-      console.log(res.data)
       this.value_to_show = res.data
       let i:string;
-      console.log(this.value_to_show?.period)
     })
   }
 }

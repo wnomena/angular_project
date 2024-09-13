@@ -18,10 +18,14 @@ export class GetAllParentRoadComponent implements OnInit{
   ngOnInit() {
       this.http.get<fetch>("http://localhost:5000/get_all/parent_circuit").subscribe((result)=>{
         for(let i of result.data) {
-          console.log(i)
           this.parent_road_list?.push(i)
         }
-        console.log(this.parent_road_list)
       })
+  } 
+  next(el : HTMLDivElement,e:Event) {
+    el.scrollTo(el.scrollLeft + el.offsetWidth,0)
+  }
+  preview(el : HTMLDivElement,e : Event) {
+    el.scrollTo(el.scrollLeft - el.offsetWidth,0)
   }
 }

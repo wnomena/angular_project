@@ -123,3 +123,6 @@ textarea {
     border: 1px solid #046ee0;
     transition: 0.3s;
 }
+app-internal-footer {
+    position: absolute;
+}

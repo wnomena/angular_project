@@ -7,3 +7,6 @@ section .col-12 h4 {
     font-family: "Calibri", 'Trebuchet MS', sans-serif;
     font-weight: bold;
 }
+.row .col-12 {
+    font-size: 15px;
+}

@@ -1,8 +1,7 @@
-<section class="container  d-flex justify-content-center">
-    <div class="choice-container d-flex flex-row w-50 p-0">
-        <div #member class="selected text-center w-100 m-0 p-0" (click)="change_color(member,admin)" >Membre</div>
-        <div #admin class="text-center w-100 m-0 p-0" (click)="change_color(admin,member)">Admin</div>
+<div class="row">
+    <div class="col-6 d-flex flex-nowrap m-auto overflow-hidden p-0">
+        <div #member class="selected text-center col-6 m-0 p-0" (click)="change_color(member,admin)" >Membre</div>
+        <div #admin class="text-center m-0 p-0 col-6" (click)="change_color(admin,member)">Admin</div>        
     </div>
-</section>
+</div>
 <router-outlet></router-outlet>
-

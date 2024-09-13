@@ -1,0 +1,37 @@
+.row .col-12 .col-lg-10 {
+    height: 40px;
+    /* font-size: 35px; */
+}
+.row .col-12 .col-lg-10 .border {
+    cursor: pointer;
+}
+.row .col-12 textarea.col-10, .row .col-12 textarea.col-10:focus, .row .col-12 textarea.col-10:active {
+    /* height: 50vh; */
+    overflow: hidden;
+    outline: none;
+}
+.row .col-12 .special {
+    height: initial;
+}
+.row .col-12 .special .d-grid {
+    grid-template-columns: 50px auto 50px;
+    grid-template-rows: 30vh;
+}
+.row .col-12 .special .d-grid .bg-transparent {
+    transition: 1s;
+    scrollbar-color: transparent transparent;
+}
+.row .col-12 .special .d-grid .bg-transparent .col-lg-4 .bg-transparent {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 29vh;
+}
+.row .col-12 .col-lg-10 .d-grid .overflow-x-scroll .col-lg-4 .bg-transparent i {
+    color: red;
+    font-size: 30px;
+}
+.alert {
+    height: 80vh;
+    display: flex;
+}

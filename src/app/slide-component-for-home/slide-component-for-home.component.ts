@@ -31,14 +31,9 @@ import { delay, interval, of } from 'rxjs';
   templateUrl: './slide-component-for-home.component.html',
   styleUrl: './slide-component-for-home.component.css'
 })
-export class SlideComponentForHomeComponent implements AfterViewInit{
+export class SlideComponentForHomeComponent {
   @ViewChild("section") section : ElementRef | undefined
   interval: string | undefined;
   value : string | undefined;
-  
-  ngAfterViewInit(): void {
-  console.log(this.section?.nativeElement.forEach((_: any) => {
-    // console.log(_************)
-  }))
-  }
+
 }
