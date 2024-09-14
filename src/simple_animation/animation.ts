@@ -17,10 +17,9 @@ export class member_model {
     nom_complet:String
     mail : String
     mot_de_passe:String
-    _id : String
+
 
     constructor(a:String,b:String,c:String, d:String){
-        this._id = a
         this.nom_complet = b
         this.mail = c
         this.mot_de_passe = d
@@ -223,5 +222,13 @@ export class typeofquality {
     constructor(a:string) {
         this.title = a
         this.content = a
+    }
+}
+export class confirmation_deletion {
+    display : boolean
+    value : Number
+    constructor(a:boolean,b : Number) {
+        this.display = a
+        this.value = b
     }
 }

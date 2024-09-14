@@ -30,6 +30,7 @@ import { MenuForAllMemberOrAdminActionComponent } from './menu-for-all-member-or
 import { OtherComponentsComponent } from './other-components/other-components.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AddNewCommentaryByMemberComponent } from './add-new-commentary-by-member/add-new-commentary-by-member.component';
+import { AdminManagerByOtherAdminComponent } from './admin-manager-by-other-admin/admin-manager-by-other-admin.component';
 
 
 export const routes: Routes = [{
@@ -90,5 +91,15 @@ export const routes: Routes = [{
     },{
         path : "list-of-member",
         component : MemberManagerComponent
+    },{
+        path : "list-admin",
+        component : AdminManagerByOtherAdminComponent
+    },{
+        path : "admin-or-member",
+        component : ChoiceBetweenAdminOrMemberComponent,
+        children : [{
+            path : "SubscriptionAdminAndMemberComponent",
+            component : SubscriptionAdminAndMemberComponent
+        }]
     }]
 }];

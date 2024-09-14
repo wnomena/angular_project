@@ -13,7 +13,7 @@ export class MemberManagerComponent implements OnInit{
   list_table: member_model[] | undefined
   ngOnInit(){
     //chargement de membre pour les modifier par la suite ou les effacer
-    this.list_table = [{nom_complet : "RAKOTOARIMALALA",mot_de_passe : "RAKOTOARIMALALA",mail : "wnomena58@gmail.com",_id : "01"}]
+    this.list_table = [{nom_complet : "RAKOTOARIMALALA",mot_de_passe : "RAKOTOARIMALALA",mail : "wnomena58@gmail.com"}]
   }
   
   deletion_of_commentary_by_id(member_mail:string) {

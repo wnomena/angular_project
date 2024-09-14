@@ -65,7 +65,6 @@ section  {
     display: block;
     background-color: rgba(gray,gray,gray,alpha);
     backface-visibility: hidden;
-    /* position: absolute; */
     top: 0;
     left: 0;
     z-index: 1;
