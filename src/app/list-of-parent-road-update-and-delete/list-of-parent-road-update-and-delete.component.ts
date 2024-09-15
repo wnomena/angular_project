@@ -39,6 +39,6 @@ export class ListOfParentRoadUpdateAndDeleteComponent implements OnInit {
     this.navigate2.navigate([`admin/home/list-of-child/${a}`])
   }
   send_api() {
-    this.http.delete(`http://localhost:5000/utilisateurs/${localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")}/user/deleter/${this.template.value}`).subscribe({next : a => console.log(a)})
+    this.http.delete(`http://localhost:5000/utilisateurs/${localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")}/user/deleter/${this.template.value}`).subscribe((a)=> this.navigate2.navigate(["admin/home/list-of-parent"]))
   }
 }

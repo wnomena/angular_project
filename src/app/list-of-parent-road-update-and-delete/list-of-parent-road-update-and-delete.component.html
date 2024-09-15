@@ -16,9 +16,9 @@
     </section>
 }@else {
     <section class="row">
-        <div class="rounded col-lg-3 bg-light">
+        <div class="m-auto rounded col-lg-3 bg-light">
             <h5 class="text-center">Action irreversible, voulez vous continuer ?</h5>
-            <div class="d-flex col-12 justify-content-center gap-1 m-1"><div (click)="send_api()" class="bg-danger rounded">Continuer</div><div class="bg-success rounded">Annuler</div></div>
+            <div class="d-flex col-12 justify-content-center gap-1 m-1"><div (click)="send_api()" class="bg-danger rounded">Continuer</div><div class="bg-success rounded"><a href="admin/home/list-of-parent" class="text-decoration-none text-light">Annuler</a></div></div>
     </div>
 </section>
 }

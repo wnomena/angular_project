@@ -23,38 +23,23 @@ export class ChangePasswordComponent implements OnInit{
     }
   }
   validate_and_send(a:String,b:String,c:String,e:Event) {
+    localStorage.removeItem("-1")
+    console.log(a,b,c)
     let i :String[] =  [a,b,c]
     for(let e of i) if(e == "" || e == undefined) this.alert = "Veuillez vérifier les informations que vous avez saisi"
     if(b !== c) this.alert = "Les nouveaux mots de passe ne sont pas identiques"
     else if( b == c) {
-      let mail = localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") !== null ? localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") : ""
-        if(localStorage.getItem(mail !== null ? mail : "") == "0") this.http.put(`http://localhost:5000/utilisateurs/update/password/member/${localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")}`,{old_pass : a,new_pass : b}).subscribe({next : a => {
-          console.log(a)
-          let ze:string | null =  localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") !== null ? localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") : null
-          localStorage.removeItem(ze !== null ? ze : "" )
-          localStorage.removeItem("id_for_admin_or_member_in_cap_sur_mada_web_site")
-          this.router.navigate(["login/subscription/login"])
-        },
-          error : error => {
-            console.log(error)
-            this.err =  error.error.message
-            e.preventDefault()
-          }
-        })
-        else if(localStorage.getItem(mail !== null ? mail : "") == "1") this.http.put(`http://localhost:5000/utilisateurs/update/password/${localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")}`,{old_pass : a,new_pass : b}).subscribe({next : a => {
-          console.log(a)
-          let ze:string | null =  localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") !== null ? localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") : null
-          localStorage.removeItem(ze !== null ? ze : "" )
-          localStorage.removeItem("id_for_admin_or_member_in_cap_sur_mada_web_site")
-          this.router.navigate(["login/subscription/login"])
-        },
-          error : error => {
-            this.err =  error.error.message
-            e.preventDefault()
-          }
-        })
+      let mail = localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") 
+      let body = {
+        old_pass : a,
+        new_pass : b
+      }
+      this.http.put(`http://localhost:5000/utilisateurs/update/password/member/${mail}/${localStorage.getItem(mail !== null? mail : "")}`,body).subscribe({next : res => {
+        console.log(res)
+      },error : err => {
+        console.log(err)
+      }})
       }
     }
     
   }
-  // /utilisateurs/update/password/member/:client_mail_for_updating

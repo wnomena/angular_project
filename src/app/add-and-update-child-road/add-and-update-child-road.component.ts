@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { child_road_list, fetch_clild_road, fetch_clild_road_2, inversed_month } from '../../simple_animation/animation';
 import { HttpClient } from '@angular/common/http';
@@ -11,10 +11,13 @@ import { InternalFooterComponent } from '../internal-footer/internal-footer.comp
   templateUrl: './add-and-update-child-road.component.html',
   styleUrl: './add-and-update-child-road.component.css'
 })
-export class AddAndUpdateChildRoadComponent implements OnInit {
+export class AddAndUpdateChildRoadComponent implements OnInit ,OnDestroy{
   title:String = "Ajout de circuit enfant"
   value_to_show:child_road_list | undefined;
   constructor(private link : ActivatedRoute,private http : HttpClient,private router : Router) {}
+  ngOnDestroy(): void {
+    
+  }
   ngOnInit(): void {
     if(this.link.snapshot.paramMap.get("name") == "0") {
     }else {

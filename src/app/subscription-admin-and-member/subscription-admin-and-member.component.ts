@@ -31,15 +31,12 @@ export class SubscriptionAdminAndMemberComponent implements OnInit {
     }
     }
     else {
-      if( bool[0] == 0) {
-        // let mail : string | null = localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")
-        // let type : string | undefined = mail !== null ? mail : undefined
         let bosy = {
           mail :  mail,
           nom_complet : complet_name,
 
         }
-        this.http.post<{message: string}>("http://localhost:5000/utilisateurs/by_admin/create/new_member",bosy).subscribe({next :a => {
+        this.http.post<{message: string}>(`http://localhost:5000/utilisateurs/by_admin/create/new_member/${bool[0]}`,bosy).subscribe({next :a => {
           this.router.navigate(["/admin/home/list-of-parent"])
           e.preventDefault()
         },
@@ -49,7 +46,6 @@ export class SubscriptionAdminAndMemberComponent implements OnInit {
         }
       })
 
-      }
     }
   }
 }

@@ -17,10 +17,11 @@ export class LoginSubComponentComponent implements OnInit {
   constructor(private http: HttpClient,private router : Router) {}
   ngOnInit(): void {
     let a : string | undefined | null;
-     let verfi : string | null = localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")
+     let verfi : string | null = localStorage.getItem("-1") !== null ? localStorage.getItem("-1") : localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") 
      if(verfi !== null) a = localStorage.getItem(verfi)
-     if(a == "1") this.router.navigate(["admin/home/list-of-parent"])
-     else if( a == "0") this.router.navigate(["/"])
+    if(a == "-1") this.router.navigate(["change_pass"])
+    else if(a == "1") this.router.navigate(["admin/home/list-of-parent"])
+    else if( a == "0") this.router.navigate(["/"])
   }
   validate(email : string, pass : string, e : Event):void {
       if(email.length <= 2 || email.length <= 2) {
@@ -28,6 +29,7 @@ export class LoginSubComponentComponent implements OnInit {
       }else {
           if(bool[bool.length - 1] == 0) {
             this.http.post<{message : string,token : string}>("http://localhost:5000/login/login_member",{ mail : email, mot_de_passe : pass}).subscribe({next : a => {
+              if(a.message == "-1") localStorage.setItem("-1","-1")
               localStorage.setItem("id_for_admin_or_member_in_cap_sur_mada_web_site",email)
               localStorage.setItem(`${email}`,"0")
               localStorage.setItem("token",a.token)
@@ -40,6 +42,7 @@ export class LoginSubComponentComponent implements OnInit {
           }
           else {
               this.http.post<{message : string,token : string}>("http://localhost:5000/login",{ mail : email, mot_de_passe : pass}).subscribe({next : a => {
+                console.log(a.message)
                 localStorage.setItem("id_for_admin_or_member_in_cap_sur_mada_web_site",email)
                 localStorage.setItem(`${email}`,"1")
                 localStorage.setItem("token",a.token)

@@ -1,9 +1,9 @@
 import { NgFor } from '@angular/common';
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
-import { model_parent_road } from '../../all_model_ts/model_parent_road';
 import { HttpClient } from '@angular/common/http';
 import { fetch, parent_road_list } from '../../simple_animation/animation';
 import { RouterLink } from '@angular/router';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-get-all-parent-road',
@@ -14,8 +14,9 @@ import { RouterLink } from '@angular/router';
 })
 export class GetAllParentRoadComponent implements OnInit{
   parent_road_list: parent_road_list[] = [];
-  constructor(private http : HttpClient) {}
+  constructor(private http : HttpClient,private HttpService : HttpService) {}
   ngOnInit() {
+    // this.HttpService.Get_parent_road()
       this.http.get<fetch>("http://localhost:5000/get_all/parent_circuit").subscribe((result)=>{
         for(let i of result.data) {
           this.parent_road_list?.push(i)

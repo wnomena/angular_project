@@ -24,23 +24,23 @@ export class PassComponentForSubsxriptionComponent implements OnInit {
     }else if(mot_de_passe !== confirmation){
         this.err = "incosistent passwords"
     }else if(mot_de_passe === confirmation) {
-      // if(this.bool == 1) {
-      //   this.http.post<{message : string}>("http://localhost:5000/utilisateurs/Login_and_subscription_and_log_out/subsscription",{mail : this.params.snapshot.paramMap.get("mail"), nom_complet : this.params.snapshot.paramMap.get("complet_name"),mot_de_passe : mot_de_passe}).subscribe({next : a => {
-      //     this.err = a.message
-      //     this.router.navigate(["login/subscription/login"])
-      //   },
-      //   error : error => this.err = error.error.re
-      // })
-      this.err = "Please contact our team"
+      if(this.bool == 1) {
+        this.http.post<{message : string}>("http://localhost:5000/utilisateurs/Login_and_subscription_and_log_out/subsscription",{mail : this.params.snapshot.paramMap.get("mail"), nom_complet : this.params.snapshot.paramMap.get("complet_name"),mot_de_passe : mot_de_passe}).subscribe({next : a => {
+          this.err = a.message
+          this.router.navigate(["login/subscription/login"])
+        },
+        error : error => this.err = error.error.re
+      })
+      // this.err = "Please contact our team"
       } else {
-      //   this.http.post<{message : string}>("http://localhost:5000/subscription_member",{mail : this.params.snapshot.paramMap.get("mail"), nom_complet : this.params.snapshot.paramMap.get("complet_name"),mot_de_passe : mot_de_passe}).subscribe({next : a => {
-      //     this.err = a.message
-      //     this.router.navigate(["login/subscription/login"])
-      //   },
-      //   error : error => this.err = error.error.re
-      // })
+        this.http.post<{message : string}>("http://localhost:5000/subscription_member",{mail : this.params.snapshot.paramMap.get("mail"), nom_complet : this.params.snapshot.paramMap.get("complet_name"),mot_de_passe : mot_de_passe}).subscribe({next : a => {
+          this.err = a.message
+          this.router.navigate(["login/subscription/login"])
+        },
+        error : error => this.err = error.error.re
+      })
       this.err = "Please contact our team"
       }
     }
   }
-
+}
