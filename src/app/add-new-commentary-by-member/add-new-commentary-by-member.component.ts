@@ -24,10 +24,10 @@ export class AddNewCommentaryByMemberComponent implements OnInit{
     if(localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") !== null) {
        this.mail = localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") !== null ? localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") : null 
         this.type2 = localStorage.getItem(this.mail ? this.mail : "") == "1" ? "Administrator" : "Member" 
-        this.http.get<{message : string , liste : commentary_model[]}>("http://localhost:5000/get_all_commentary").subscribe((a)=> {
+        this.http.get<{message : string , liste : commentary_model[]}>("https://caponmada.com/get_all_commentary").subscribe((a)=> {
          if(Array.from(a.liste).filter((c) => c.mail == this.mail).length == 0) {
           this.authorized = true
-          this.http.get<fetch_clild_road>("http://localhost:5000/0/public/way").subscribe((a)=> {
+          this.http.get<fetch_clild_road>("https://caponmada.com/0/public/way").subscribe((a)=> {
             for(let i of a.data) {
              inrabge.push(i)
             }
@@ -55,8 +55,8 @@ export class AddNewCommentaryByMemberComponent implements OnInit{
     for(let i = 0; i < parent_div.children.length; i++) {
       if(parent_div.children[i].children[0].children[0].classList.contains("bi-heart-fill")) {
         // let find_in_table =  Array.from(parent_div.children[i].children[0].children[1].innerHTML.split(" "))[1]
-        this.http.put(`http://localhost:5000/update/one_child_road/to_be_a_favorite/${this.mail}/${Array.from(parent_div.children[i].children[0].children[1].innerHTML.split(" "))[2]}`,{ headers: new HttpHeaders()}).subscribe((a) => console.log(a))
-        this.http.post<{message: string}>(`http://localhost:5000/add_new/commentary/by/member/${this.mail}`,{string_commentary : string_commentary}).subscribe({next : a => {
+        this.http.put(`https://capoonmada.com/update/one_child_road/to_be_a_favorite/${this.mail}/${Array.from(parent_div.children[i].children[0].children[1].innerHTML.split(" "))[2]}`,{ headers: new HttpHeaders()}).subscribe((a) => console.log(a))
+        this.http.post<{message: string}>(`https://capoonmada.com/add_new/commentary/by/member/${this.mail}`,{string_commentary : string_commentary}).subscribe({next : a => {
           this.router.navigate([""])
         },
         error : err => {

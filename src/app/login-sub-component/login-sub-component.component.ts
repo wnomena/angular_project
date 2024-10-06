@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { bool } from '../../simple_animation/animation';
-import { HttpClient } from '@angular/common/http';
 import { RedirectCommand, Route, Router, RouterLink } from '@angular/router';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
+import { HttpClient } from '@angular/common/http';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-login-sub-component',
@@ -14,7 +15,7 @@ import { InternalFooterComponent } from '../internal-footer/internal-footer.comp
 export class LoginSubComponentComponent implements OnInit {
   value_show : string | undefined;
   private bool : number = bool[0]
-  constructor(private http: HttpClient,private router : Router) {}
+  constructor(private http: HttpService,private router : Router) {}
   ngOnInit(): void {
     let a : string | undefined | null;
      let verfi : string | null = localStorage.getItem("-1") !== null ? localStorage.getItem("-1") : localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") 
@@ -28,7 +29,7 @@ export class LoginSubComponentComponent implements OnInit {
         e.preventDefault()
       }else {
           if(bool[bool.length - 1] == 0) {
-            this.http.post<{message : string,token : string}>("http://localhost:5000/login/login_member",{ mail : email, mot_de_passe : pass}).subscribe({next : a => {
+            this.http.login_member({ mail : email, mot_de_passe : pass}).subscribe({next : a => {
               if(a.message == "-1") localStorage.setItem("-1","-1")
               localStorage.setItem("id_for_admin_or_member_in_cap_sur_mada_web_site",email)
               localStorage.setItem(`${email}`,"0")
@@ -41,7 +42,7 @@ export class LoginSubComponentComponent implements OnInit {
           })
           }
           else {
-              this.http.post<{message : string,token : string}>("http://localhost:5000/login",{ mail : email, mot_de_passe : pass}).subscribe({next : a => {
+              this.http.login_admin({ mail : email, mot_de_passe : pass}).subscribe({next : a => {
                 console.log(a.message)
                 localStorage.setItem("id_for_admin_or_member_in_cap_sur_mada_web_site",email)
                 localStorage.setItem(`${email}`,"1")

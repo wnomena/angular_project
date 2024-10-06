@@ -17,7 +17,7 @@ export class GetAllParentRoadComponent implements OnInit{
   constructor(private http : HttpClient,private HttpService : HttpService) {}
   ngOnInit() {
     // this.HttpService.Get_parent_road()
-      this.http.get<fetch>("http://localhost:5000/get_all/parent_circuit").subscribe((result)=>{
+      this.http.get<fetch>("https://caponmada.com/get_all/parent_circuit").subscribe((result)=>{
         for(let i of result.data) {
           this.parent_road_list?.push(i)
         }

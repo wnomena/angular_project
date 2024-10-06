@@ -16,7 +16,7 @@ export class ListOfChildRoadToDeleteAndUpdateComponent implements OnInit {
   img : String | undefined;
   child_road_list: child_road_list[] = [];
   ngOnInit(): void {
-    this.http.get<fetch_clild_road>(`http://localhost:5000/${this.avtivated.snapshot.paramMap.get("id")}/public/way`).subscribe(value=>{
+    this.http.get<fetch_clild_road>(`https://caponmada.com/${this.avtivated.snapshot.paramMap.get("id")}/public/way`).subscribe(value=>{
       for(let i = 0; i < value.data.length; i++) {
         this.child_road_list.push(value.data[i])
         if(i == 0) {

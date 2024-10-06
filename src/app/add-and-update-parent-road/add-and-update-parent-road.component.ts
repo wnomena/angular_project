@@ -2,7 +2,6 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { HoverForMenuPcDirective } from '../hover-for-menu-pc.directive';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inversed_month, Month, parent_road_list } from '../../simple_animation/animation';
-import axios  from "axios"
 import { ActivatedRoute, Router } from '@angular/router';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
 // import { FileSystem } from "@angular/core"
@@ -45,11 +44,11 @@ export class AddAndUpdateParentRoadComponent implements OnInit{
       this.modif_or_add()
     }
     modif_or_add() {
-      if(this.router.snapshot.paramMap.get("id") == "0") this.http.post("http://localhost:5000/utilisateurs/add_avant_post/by_user",this.form_data).subscribe({next : a => {
+      if(this.router.snapshot.paramMap.get("id") == "0") this.http.post("https://caponmada.com/utilisateurs/add_avant_post/by_user",this.form_data).subscribe({next : a => {
         this.redirect.navigate(["admin/home/list-of-parent"])
         console.log("er")
       },error : b =>  location.reload()})
-      else this.http.put(`http://localhost:5000/utilisateurs/update_parent_road/by_user/${this.router.snapshot.paramMap.get("id")}`,this.form_data).subscribe((a)=> {
+      else this.http.put(`https://caponmada.com/utilisateurs/update_parent_road/by_user/${this.router.snapshot.paramMap.get("id")}`,this.form_data).subscribe((a)=> {
         this.redirect.navigate(["admin/home/list-of-parent"])
       })
     }

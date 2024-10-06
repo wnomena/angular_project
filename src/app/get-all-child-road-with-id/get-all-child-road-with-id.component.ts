@@ -17,7 +17,7 @@ export class GetAllChildRoadWithIdComponent implements OnInit {
   constructor(private http:HttpClient,private link : ActivatedRoute) {}
   ngOnInit(): void {
     let itermediare:child_road_for_display[] = []
-    this.http.get<fetch_clild_road>(`http://localhost:5000/${this.link.snapshot.paramMap.get("id")}/public/way`).subscribe((res)=> {
+    this.http.get<fetch_clild_road>(`https://caponmada.com/${this.link.snapshot.paramMap.get("id")}/public/way`).subscribe((res)=> {
       for(let i = 0; i < res.data.length; i++) {
         itermediare.push({
           name: res.data[i].name, id: i, description: res.data[i].description, presentation_image: res.data[i].presentation_image, period: res.data[i].period, confort: res.data[i].confort, difficulty: res.data[i].difficulty, price: res.data[i].price, distance: res.data[i].distance,

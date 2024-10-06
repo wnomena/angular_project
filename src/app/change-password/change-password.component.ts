@@ -34,7 +34,7 @@ export class ChangePasswordComponent implements OnInit{
         old_pass : a,
         new_pass : b
       }
-      this.http.put(`http://localhost:5000/utilisateurs/update/password/member/${mail}/${localStorage.getItem(mail !== null? mail : "")}`,body).subscribe({next : res => {
+      this.http.put(`https://caponmada.com/utilisateurs/update/password/member/${mail}/${localStorage.getItem(mail !== null? mail : "")}`,body).subscribe({next : res => {
         console.log(res)
       },error : err => {
         console.log(err)

@@ -1,5 +1,4 @@
 import { NgIf } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
 
@@ -11,7 +10,7 @@ import {  Router } from '@angular/router';
   styleUrl: './menu-for-all-member-or-admin-action.component.css'
 })
 export class MenuForAllMemberOrAdminActionComponent implements OnInit {
-  constructor(private router : Router,private http : HttpClient){}
+  constructor(private router : Router){}
   ngif:string | undefined | null; 
   member_or_admin : string | null | undefined
   ngOnInit(): void {
@@ -20,13 +19,11 @@ export class MenuForAllMemberOrAdminActionComponent implements OnInit {
       else this.member_or_admin = undefined
   }
   deconnexion() {
-    this.http.get("http://localhost:5000/utilisateurs/log_ou/utilisateur").subscribe((a)=> {
     let o:string | undefined | null= localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") != null ? localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") : undefined
     localStorage.removeItem(o ? o : "")
     localStorage.removeItem("id_for_admin_or_member_in_cap_sur_mada_web_site")
     localStorage.removeItem("token")
     location.reload()
-    })
   }
   change_pass():void {
     this.router.navigate(["change_pass"])

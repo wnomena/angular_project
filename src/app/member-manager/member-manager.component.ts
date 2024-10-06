@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { member_model } from '../../simple_animation/animation';
 import { NgFor } from '@angular/common';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-member-manager',
@@ -10,13 +11,17 @@ import { NgFor } from '@angular/common';
   styleUrl: './member-manager.component.css'
 })
 export class MemberManagerComponent implements OnInit{
+  constructor(private Fetch : HttpService) {}
   list_table: member_model[] | undefined
   ngOnInit(){
-    //chargement de membre pour les modifier par la suite ou les effacer
-    this.list_table = [{nom_complet : "RAKOTOARIMALALA",mot_de_passe : "RAKOTOARIMALALA",mail : "wnomena58@gmail.com"}]
-  }
+    
+    this.Fetch.get_all_member().subscribe((e) => {
+      this.list_table = [...e.data]
+    })
+     }
   
-  deletion_of_commentary_by_id(member_mail:string) {
-    //route pour l effacement des donnes via  une requette delete et un identifiant stocker dans un variable local
+  deletion_of_member_by_id(member_mail:string) {
+    this.Fetch.delete_one_member(member_mail,localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")).subscribe({next : res => location.reload(),error : err => alert(err)})
   }
+
 }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ChoiceBetweenAdminOrMemberComponent } from '../choice-between-admin-or-member/choice-between-admin-or-member.component';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
-import { HttpClient } from '@angular/common/http';
 import { bool } from '../../simple_animation/animation';
 import { Router } from '@angular/router';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-subscription-admin-and-member',
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class SubscriptionAdminAndMemberComponent implements OnInit {
   
   err : string | undefined;
-  constructor(private router : Router,private http : HttpClient) {}
+  constructor(private router : Router,private http : HttpService) {}
   ngOnInit(): void {
     console.log(typeof location.href)
   }
@@ -36,7 +36,7 @@ export class SubscriptionAdminAndMemberComponent implements OnInit {
           nom_complet : complet_name,
 
         }
-        this.http.post<{message: string}>(`http://localhost:5000/utilisateurs/by_admin/create/new_member/${bool[0]}`,bosy).subscribe({next :a => {
+        this.http.add_new_member(bosy).subscribe({next :a => {
           this.router.navigate(["/admin/home/list-of-parent"])
           e.preventDefault()
         },

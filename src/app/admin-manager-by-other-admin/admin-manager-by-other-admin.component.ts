@@ -16,7 +16,7 @@ export class AdminManagerByOtherAdminComponent implements OnInit {
   data : member_model[] | undefined
   constructor(private http : HttpClient,private router : Router){}
   ngOnInit(): void {
-    this.http.get<{data :  member_model[]}>(`http://localhost:5000/get_admin_or_member/1`).subscribe((a) => {
+    this.http.get<{data :  member_model[]}>(`https://caponmada.com/get_admin_or_member/1`).subscribe((a) => {
       console.log(a)
         this.data = [...a.data]
         console.log(this.data)
@@ -30,7 +30,7 @@ export class AdminManagerByOtherAdminComponent implements OnInit {
         user_mail : localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site"),
         member_mail : this.token_display.value
       }
-      this.http.delete(`http://localhost:5000/utilisateurs/delete_member/by_admin/${body.user_mail}/${body.member_mail}`).subscribe({next : a => {
+      this.http.delete(`https://caponmada.com/utilisateurs/delete_member/by_admin/${body.user_mail}/${body.member_mail}`).subscribe({next : a => {
         this.router.navigate(["admin/home/list-admin"])
       },
       error : err => {

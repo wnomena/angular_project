@@ -19,7 +19,7 @@ export class CommentaryComponent implements OnInit {
   constructor(private http:HttpClient,private router : Router) {}
   ngOnInit(): void {
     let i:any= localStorage.getItem("id") !== null ? localStorage.getItem("id") : undefined
-    if(i) this.http.get<{message : string ,liste :  commentary_model[]}>("http://localhost:5000/get_all_commentary").subscribe((res)=> {
+    if(i) this.http.get<{message : string ,liste :  commentary_model[]}>("https://caponmada.com/get_all_commentary").subscribe((res)=> {
       for(let i of res.liste) this.list_table.push(i)
     })
     else this.router.navigate(["login/subscription/login"])
