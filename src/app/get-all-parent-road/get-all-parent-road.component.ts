@@ -2,13 +2,13 @@ import { NgFor } from '@angular/common';
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { fetch, parent_road_list } from '../../simple_animation/animation';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-get-all-parent-road',
   standalone: true,
-  imports: [NgFor,RouterLink],
+  imports: [NgFor,RouterLink,RouterLinkActive],
   templateUrl: './get-all-parent-road.component.html',
   styleUrl: './get-all-parent-road.component.css'
 })

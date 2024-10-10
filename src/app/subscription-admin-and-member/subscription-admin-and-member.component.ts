@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ChoiceBetweenAdminOrMemberComponent } from '../choice-between-admin-or-member/choice-between-admin-or-member.component';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
 import { bool } from '../../simple_animation/animation';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-subscription-admin-and-member',
   standalone: true,
-  imports: [InternalFooterComponent],
+  imports: [InternalFooterComponent,RouterLink,RouterLinkActive],
   templateUrl: './subscription-admin-and-member.component.html',
   styleUrl: './subscription-admin-and-member.component.css'
 })

@@ -7,7 +7,7 @@
           </svg></div></div>
         <div class="col-8 p-0"><div class="d-flex p-0"><div class="col-4 border" *ngFor="let i of value_to_show"><div class="d-flex flex-column-reverse
 " [style]="{'background-image': 'url(' + i.presentation_image + ')'}"><div class="hover"><div class="text-light">Nom : {{ i.name }}</div><div class="d-flex justify-content-end p-3">
-          <div class="button_slide slide_down"><a class="text-decoration-none" [href]="'public/information/' + i.name">Voir plus</a><i class="bi bi-chevron-double-right"></i></div>
+          <div class="button_slide slide_down"><a class="text-decoration-none" [routerLink]="'public/information/' + i.name" routerLinkActive="activebutton">Voir plus</a><i class="bi bi-chevron-double-right"></i></div>
       </div></div></div></div>
         </div></div>
       </section>

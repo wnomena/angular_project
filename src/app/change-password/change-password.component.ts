@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
 import { HttpClient } from '@angular/common/http';
 import { bool } from '../../simple_animation/animation';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { LowerCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-change-password',
   standalone: true,
-  imports: [InternalFooterComponent],
+  imports: [InternalFooterComponent,RouterLink,RouterLinkActive],
   templateUrl: './change-password.component.html',
   styleUrl: './change-password.component.css'
 })  

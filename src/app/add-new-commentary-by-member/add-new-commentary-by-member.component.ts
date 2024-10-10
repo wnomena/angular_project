@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { fetch_clild_road ,child_road_list, commentary_model} from '../../simple_animation/animation';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-add-new-commentary-by-member',
   standalone: true,
-  imports: [NgFor,NgIf],
+  imports: [NgFor,NgIf,RouterLink,RouterLinkActive],
   templateUrl: './add-new-commentary-by-member.component.html',
   styleUrl: './add-new-commentary-by-member.component.css'
 })

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-menu-bar-admin',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,RouterLink,RouterLinkActive],
   templateUrl: './menu-bar-admin.component.html',
   styleUrl: './menu-bar-admin.component.css'
 })

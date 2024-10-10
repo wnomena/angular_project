@@ -2,13 +2,13 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { child_road_for_display, child_road_list, fetch_clild_road } from '../../simple_animation/animation';
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
 
 @Component({
   selector: 'app-get-all-child-road-with-id',
   standalone: true,
-  imports: [NgFor,InternalFooterComponent,NgIf],
+  imports: [NgFor,InternalFooterComponent,NgIf,RouterLink,RouterLinkActive],
   templateUrl: './get-all-child-road-with-id.component.html',
   styleUrl: './get-all-child-road-with-id.component.css'
 })

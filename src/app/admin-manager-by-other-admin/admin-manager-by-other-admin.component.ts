@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { member_model } from '../../simple_animation/animation';
 import { NgFor } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-admin-manager-by-other-admin',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,RouterLink,RouterLinkActive],
   templateUrl: './admin-manager-by-other-admin.component.html',
   styleUrl: './admin-manager-by-other-admin.component.css'
 })

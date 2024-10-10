@@ -28,12 +28,12 @@
               </div>
               <div class="col-6 h-auto p-0">
                 <div class="full-screen col-12 p-0 m-0 d-flex">
-                    <span class="d-flex justify-content-center col-3  ms-1 p-1"><a class="text-light text-decoration-none d-flex col-12 justify-content-center h-inherit m-0 align-items-center button" href="/"><i class="bi bi-house-door"></i> <p class="m-0 d-lg-block d-md-none d-none"> Home </p></a></span>
-                    <span class="d-flex justify-content-center  col-3 ms-1 p-1"><a class="text-light text-decoration-none d-flex col-12 justify-content-center h-auto m-0 align-items-center button" href="public/all_child/0"><i class="bi bi-signpost-split"></i> <p class="m-0 d-lg-block d-md-none d-none"> Nos circuits</p></a></span>            
+                    <span class="d-flex justify-content-center col-3  ms-1 p-1"><a class="text-light text-decoration-none d-flex col-12 justify-content-center h-inherit m-0 align-items-center button" routerLink="/" routerLinkActive="activebutton"><i class="bi bi-house-door"></i> <p class="m-0 d-lg-block d-md-none d-none"> Home </p></a></span>
+                    <span class="d-flex justify-content-center  col-3 ms-1 p-1"><a class="text-light text-decoration-none d-flex col-12 justify-content-center h-auto m-0 align-items-center button" routerLink="/public/all_child/0" routerLinkActive="active"><i class="bi bi-signpost-split"></i> <p class="m-0 d-lg-block d-md-none d-none"> Nos circuits</p></a></span>            
                 @if (ngif) {
                     <span class="d-flex align-items-center justify-content-center flex-nowrap col-4 ms-1 p-1" data-bs-toggle="collapse" data-bs-target="#collapseExample"><i type="button" class="bi bi-people-fill"></i><small class="d-lg-flex align-items-center d-md-none d-none ms-1">{{ ngif }}</small></span>
                 }@else {
-                    <span class="d-flex justify-content-center  col-3 ms-1 p-1"><a class="text-light text-decoration-none d-flex col-12 justify-content-center h-auto m-0 align-items-center button" href="login/subscription/login"><i class="bi bi-globe2"></i> <p class="m-0 d-lg-block d-md-none d-none">Connexion</p></a></span>
+                    <span class="d-flex justify-content-center  col-3 ms-1 p-1"><a class="text-light text-decoration-none d-flex col-12 justify-content-center h-auto m-0 align-items-center button" routerLink="/login/subscription/login" routerLinkActive="active"><i class="bi bi-globe2"></i> <p class="m-0 d-lg-block d-md-none d-none">Connexion</p></a></span>
                 }
             </div>
               </div>

@@ -3,13 +3,13 @@ import { confirmation_deletion, fetch, parent_road_list } from '../../simple_ani
 import { HttpClient } from '@angular/common/http';
 import { NgFor } from '@angular/common';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-list-of-parent-road-update-and-delete',
   standalone: true,
-  imports: [NgFor,InternalFooterComponent],
+  imports: [NgFor,InternalFooterComponent,RouterLink,RouterLinkActive],
   templateUrl: './list-of-parent-road-update-and-delete.component.html',
   styleUrl: './list-of-parent-road-update-and-delete.component.css'
 })

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { bool } from '../../simple_animation/animation';
 import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-pass-component-for-subsxription',
   standalone: true,
-  imports: [InternalFooterComponent],
+  imports: [InternalFooterComponent,RouterLink,RouterLinkActive],
   templateUrl: './pass-component-for-subsxription.component.html',
   styleUrl: './pass-component-for-subsxription.component.css'
 })
