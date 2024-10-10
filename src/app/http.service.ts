@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService implements OnDestroy {
   private subscription : Subscription | undefined 
-  private link : string = "https://caponmada.com"
+  private link : string = "https://web.caponmada.com"
 
   constructor(private http : HttpClient ) { }
   ngOnDestroy(): void {
@@ -48,7 +48,7 @@ export class HttpService implements OnDestroy {
       return this.http.post<{message : string,token : string}>(this.link + "/login",value) 
   }
     delete_member(value : any): Observable<{message : string}> {
-      return this.http.delete<{message : string}>(`https://caponmada.com/utilisateurs/${localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")}/user/deleter/${value}`)
+      return this.http.delete<{message : string}>(`${this.link}/utilisateurs/${localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")}/user/deleter/${value}`)
     }
 
 }

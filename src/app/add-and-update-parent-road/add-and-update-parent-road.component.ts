@@ -45,17 +45,17 @@ export class AddAndUpdateParentRoadComponent implements OnInit{
     }
     modif_or_add() {
       if(this.router.snapshot.paramMap.get("id") == "0") this.http.post("https://caponmada.com/utilisateurs/add_avant_post/by_user",this.form_data).subscribe({next : a => {
-        this.redirect.navigate(["admin/home/list-of-parent"])
+        this.redirect.navigate(["dist/first_project_with_angular/browser//admin/home/list-of-parent"])
         console.log("er")
       },error : b =>  location.reload()})
       else this.http.put(`https://caponmada.com/utilisateurs/update_parent_road/by_user/${this.router.snapshot.paramMap.get("id")}`,this.form_data).subscribe((a)=> {
-        this.redirect.navigate(["admin/home/list-of-parent"])
+        this.redirect.navigate(["dist/first_project_with_angular/browser/admin/home/list-of-parent"])
       })
     }
     inversed_month2(a:string | undefined, b : number) {
      return inversed_month(a ? a.split(" ")[b] : "undefined")
     }
     retour() {
-      this.redirect.navigate(["admin/home/list-of-parent"])
+      this.redirect.navigate(["dist/first_project_with_angular/browser/admin/home/list-of-parent"])
     }
   }

@@ -22,7 +22,7 @@ export class CommentaryComponent implements OnInit {
     if(i) this.http.get<{message : string ,liste :  commentary_model[]}>("https://caponmada.com/get_all_commentary").subscribe((res)=> {
       for(let i of res.liste) this.list_table.push(i)
     })
-    else this.router.navigate(["login/subscription/login"])
+    else this.router.navigate(["dist/first_project_with_angular/browser/login/subscription/login"])
   }
   remise_value(string : String) {
     this.string = string

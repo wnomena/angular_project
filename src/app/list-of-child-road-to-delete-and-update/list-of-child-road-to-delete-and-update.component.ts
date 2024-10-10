@@ -29,10 +29,10 @@ export class ListOfChildRoadToDeleteAndUpdateComponent implements OnInit {
     this.img = image
   }
   add_new() {
-    this.router.navigate([`admin/home/update/child-road/0/${this.avtivated.snapshot.paramMap.get("id")}`])
+    this.router.navigate([`dist/first_project_with_angular/browser/admin/home/update/child-road/0/${this.avtivated.snapshot.paramMap.get("id")}`])
   }
   update(name : string) {
-    this.router.navigate([`admin/home/update/child-road/${name}/${this.avtivated.snapshot.paramMap.get("id")}`])
+    this.router.navigate([`dist/first_project_with_angular/browser/admin/home/update/child-road/${name}/${this.avtivated.snapshot.paramMap.get("id")}`])
   }
 }
 //migere bouton de navigation pour effacement sy modification sisa fa efa vita ny design

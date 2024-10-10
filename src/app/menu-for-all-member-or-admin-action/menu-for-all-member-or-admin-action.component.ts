@@ -26,13 +26,13 @@ export class MenuForAllMemberOrAdminActionComponent implements OnInit {
     location.reload()
   }
   change_pass():void {
-    this.router.navigate(["change_pass"])
+    this.router.navigate(["dist/first_project_with_angular/browser/change_pass"])
   }
   page_admin():void {
-    this.router.navigate(["admin/home/list-of-parent"])
+    this.router.navigate(["dist/first_project_with_angular/browser/admin/home/list-of-parent"])
   }
   add_new_commentary() {
-    this.router.navigate(["text"])
+    this.router.navigate(["dist/first_project_with_angular/browser/text"])
   }
   navigation() {
     if(this.member_or_admin == "1") return this.page_admin()

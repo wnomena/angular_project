@@ -26,7 +26,7 @@ export class PassComponentForSubsxriptionComponent implements OnInit {
     }else if(mot_de_passe === confirmation) {
        this.http.subscription_method({mail : this.params.snapshot.paramMap.get("mail"), nom_complet : this.params.snapshot.paramMap.get("complet_name"),mot_de_passe : mot_de_passe}).subscribe({next : a => {
           this.err = a.message
-          this.router.navigate(["login/subscription/login"])
+          this.router.navigate(["dist/first_project_with_angular/browser/login/subscription/login"])
         },
         error : error => this.err = error.error.re
       })

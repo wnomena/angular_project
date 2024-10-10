@@ -31,11 +31,11 @@ export class AdminManagerByOtherAdminComponent implements OnInit {
         member_mail : this.token_display.value
       }
       this.http.delete(`https://caponmada.com/utilisateurs/delete_member/by_admin/${body.user_mail}/${body.member_mail}`).subscribe({next : a => {
-        this.router.navigate(["admin/home/list-admin"])
+        this.router.navigate(["dist/first_project_with_angular/browser/admin/home/list-admin"])
       },
       error : err => {
         alert(err.error.message)
-        this.router.navigate(["admin/home/list-admin"])
+        this.router.navigate(["dist/first_project_with_angular/browser/admin/home/list-admin"])
       }
     })
     }

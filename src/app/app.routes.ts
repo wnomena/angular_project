@@ -35,7 +35,7 @@ import { AdminManagerByOtherAdminComponent } from './admin-manager-by-other-admi
 
 export const routes: Routes = [{
     path : "",
-    component : AssemblyHomeComponent
+    loadComponent : () => import("./assembly-home/assembly-home.component").then((component) => component.AssemblyHomeComponent)
 },{
     path : "text",
     component: AddNewCommentaryByMemberComponent 

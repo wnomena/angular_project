@@ -53,11 +53,11 @@ export class AddAndUpdateChildRoadComponent implements OnInit ,OnDestroy{
         location.reload()
       } else if(this.link.snapshot.paramMap.get("name") !== "0") {
         this.subscription = this.http.put<{message : string}>(`https://caponmada.com/utilisateurs/update_child_way/by_user`,this.form_data).subscribe({next : a => {
-          this.router.navigate(["admin/home/list-of-parent"])
+          this.router.navigate(["dist/first_project_with_angular/browser/admin/home/list-of-parent"])
         },error : err => location.reload()})
       }else if(this.link.snapshot.paramMap.get("name") == "0") {
         this.subscription = this.http.post<{message : string}>("https://caponmada.com/utilisateurs/add_unders/circuit/by_users",this.form_data).subscribe({next : a => {
-          this.router.navigate(["admin/home/list-of-parent"])
+          this.router.navigate(["dist/first_project_with_angular/browser//admin/home/list-of-parent"])
         },error : err => location.reload()})
       }
     }

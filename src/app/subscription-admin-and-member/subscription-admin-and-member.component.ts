@@ -37,7 +37,7 @@ export class SubscriptionAdminAndMemberComponent implements OnInit {
 
         }
         this.http.add_new_member(bosy).subscribe({next :a => {
-          this.router.navigate(["/admin/home/list-of-parent"])
+          this.router.navigate(["dist/first_project_with_angular/browser/admin/home/list-of-parent"])
           e.preventDefault()
         },
         error : err => {

@@ -26,7 +26,7 @@ export class ListOfParentRoadUpdateAndDeleteComponent implements OnInit {
     console.log(this.template)
   }
   navigate(id : Number) {
-    this.navigate2.navigate([`admin/home/update/parent-road/${id}`])
+    this.navigate2.navigate([`dist/first_project_with_angular/browser/admin/home/update/parent-road/${id}`])
   }
   delete_road(a:Number) {
     console.log(a)
@@ -35,14 +35,14 @@ export class ListOfParentRoadUpdateAndDeleteComponent implements OnInit {
     // this.http.delete(`http://localhost:5000/utilisateurs/${localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")}/user/deleter/${a}`).subscribe({next : a => console.log(a)})
   }
   modification_road(a:Number) {
-    this.navigate2.navigate([`admin/home/update/parent-road/${a}`])
+    this.navigate2.navigate([`dist/first_project_with_angular/browser/admin/home/update/parent-road/${a}`])
   }
   next(a : Number) {
-    this.navigate2.navigate([`admin/home/list-of-child/${a}`])
+    this.navigate2.navigate([`dist/first_project_with_angular/browser/admin/home/list-of-child/${a}`])
   }
   send_api() {
     this.http.delete_parent_road(this.template.value).subscribe((a)=> {
       console.log("mandeana")
-      this.navigate2.navigate(["admin/home/list-of-parent"])})
+      this.navigate2.navigate(["dist/first_project_with_angular/browser/admin/home/list-of-parent"])})
   }
 }

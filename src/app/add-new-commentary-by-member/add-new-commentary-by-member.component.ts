@@ -39,7 +39,7 @@ export class AddNewCommentaryByMemberComponent implements OnInit{
         })
     }
     else {
-      this.router.navigate([""])
+      this.router.navigate(["dist/first_project_with_angular/browser/"])
     }
   }
 

@@ -19,7 +19,7 @@ export class ChangePasswordComponent implements OnInit{
   ngOnInit(): void {
     let a = localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site")
     if(localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") == null || localStorage.getItem(a !== null ? a : "") == null) {
-      this.router.navigate(["/"])
+      this.router.navigate(["dist/first_project_with_angular/browser/"])
     }
   }
   validate_and_send(a:String,b:String,c:String,e:Event) {
