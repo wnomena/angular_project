@@ -4,6 +4,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-get-all-child-road-with-id',
@@ -14,10 +15,10 @@ import { InternalFooterComponent } from '../internal-footer/internal-footer.comp
 })
 export class GetAllChildRoadWithIdComponent implements OnInit {
   parent_road_list: child_road_for_display[] = []
-  constructor(private http:HttpClient,private link : ActivatedRoute) {}
+  constructor(private http:HttpService,private link : ActivatedRoute) {}
   ngOnInit(): void {
     let itermediare:child_road_for_display[] = []
-    this.http.get<fetch_clild_road>(`https://caponmada.com/${this.link.snapshot.paramMap.get("id")}/public/way`).subscribe((res)=> {
+    this.http.get_some_child_road(this.link.snapshot.paramMap.get("id")).subscribe((res)=> {
       for(let i = 0; i < res.data.length; i++) {
         itermediare.push({
           name: res.data[i].name, id: i, description: res.data[i].description, presentation_image: res.data[i].presentation_image, period: res.data[i].period, confort: res.data[i].confort, difficulty: res.data[i].difficulty, price: res.data[i].price, distance: res.data[i].distance,

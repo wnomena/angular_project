@@ -20,7 +20,7 @@ export class SubscriptionAdminAndMemberComponent implements OnInit {
     console.log(typeof location.href)
   }
   validate(complet_name :string, mail : string,e : Event) {
-    if(location.href == "http://localhost:4200/login/subscription/subscription") {
+    if(location.href == "https://caponmada.com/login/subscription/subscription") {
       let c = mail.split("@").length
     let d = complet_name.split(" ").length
     if(d > 1 && c > 1) {

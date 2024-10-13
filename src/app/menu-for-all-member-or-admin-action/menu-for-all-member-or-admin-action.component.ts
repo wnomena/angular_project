@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-menu-for-all-member-or-admin-action',
@@ -10,20 +11,20 @@ import {  Router } from '@angular/router';
   styleUrl: './menu-for-all-member-or-admin-action.component.css'
 })
 export class MenuForAllMemberOrAdminActionComponent implements OnInit {
-  constructor(private router : Router){}
+  constructor(private router : Router,private localStorage : LocalStorageService){}
   ngif:string | undefined | null; 
   member_or_admin : string | null | undefined
   ngOnInit(): void {
-      this.ngif = localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") !== null ? localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") : undefined
-      if(this.ngif) this.member_or_admin = localStorage.getItem(`${this.ngif}`) == "1" ? localStorage.getItem(`${this.ngif}`) : "0"
+      this.ngif = this.localStorage.getValueFormSessionStorage("id_for_admin_or_member_in_cap_sur_mada_web_site") !== null ? this.localStorage.getValueFormSessionStorage("id_for_admin_or_member_in_cap_sur_mada_web_site") : undefined
+      if(this.ngif) this.member_or_admin = this.localStorage.getValueFormSessionStorage(`${this.ngif}`) == "1" ? this.localStorage.getValueFormSessionStorage(`${this.ngif}`) : "0"
       else this.member_or_admin = undefined
   }
   deconnexion() {
-    let o:string | undefined | null= localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") != null ? localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site") : undefined
-    localStorage.removeItem(o ? o : "")
-    localStorage.removeItem("id_for_admin_or_member_in_cap_sur_mada_web_site")
-    localStorage.removeItem("token")
-    location.reload()
+    let o:string | undefined | null= this.localStorage.getValueFormSessionStorage("id_for_admin_or_member_in_cap_sur_mada_web_site") != null ? this.localStorage.getValueFormSessionStorage("id_for_admin_or_member_in_cap_sur_mada_web_site") : undefined
+    this.localStorage.removeValueFormSessionStorage(o ? o : "")
+    this.localStorage.removeValueFormSessionStorage("id_for_admin_or_member_in_cap_sur_mada_web_site")
+    this.localStorage.removeValueFormSessionStorage("token")
+    this.localStorage.actualisation()
   }
   change_pass():void {
     this.router.navigate(["dist/first_project_with_angular/browser/change_pass"])

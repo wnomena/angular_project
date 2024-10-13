@@ -14,14 +14,14 @@ import { HttpService } from '../http.service';
 })
 export class GetAllParentRoadComponent implements OnInit{
   parent_road_list: parent_road_list[] = [];
-  constructor(private http : HttpClient,private HttpService : HttpService) {}
+  constructor(private http : HttpService,private HttpService : HttpService) {}
   ngOnInit() {
     // this.HttpService.Get_parent_road()
-      this.http.get<fetch>("https://caponmada.com/get_all/parent_circuit").subscribe((result)=>{
+      this.http.get_all_parent_road().subscribe({next : result =>{
         for(let i of result.data) {
           this.parent_road_list?.push(i)
         }
-      })
+      }})
   } 
   next(el : HTMLDivElement,e:Event) {
     el.scrollTo(el.scrollLeft + el.offsetWidth,0)

@@ -7,10 +7,10 @@
               <h3>Les membres</h3>
         </div>
         <span style="align-items: center; width: 250px" class="return me-1 bg-primary d-flex justify-content-center">
-            <i class="bi bi-chevron-left"> <a href="admin/home/admin-or-member/SubscriptionAdminAndMemberComponent" class="text-light text-decoration-none"> Add new</a> </i>
+            <i class="bi bi-chevron-left"> <a routerLInk="admin/home/admin-or-member/SubscriptionAdminAndMemberComponent" routerLinkActive="activebutton" class="text-light text-decoration-none"> Add new</a> </i>
         </span>
         <span style="align-items: center; width: 250px" class="return bg-primary d-flex justify-content-center">
-            <i class="bi bi-chevron-left"> <a class="text-decoration-none text-light" href="admin/home/list-of-parent">Retour</a></i>
+            <i class="bi bi-chevron-left"> <a class="text-decoration-none text-light" routerLInk="admin/home/list-of-parent" routerLinkActive="activebutton">Retour</a></i>
         </span>
     </div>
     <div class="commentary_list" *ngFor="let i of list_table">

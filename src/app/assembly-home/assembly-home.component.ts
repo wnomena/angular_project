@@ -26,9 +26,6 @@ import { SomeImageComponent } from '../some-image/some-image.component';
   templateUrl: './assembly-home.component.html',
   styleUrl: './assembly-home.component.css'
 })
-export class AssemblyHomeComponent  implements OnInit{
-  ngOnInit(): void {
-    localStorage.removeItem("id")
-  }
+export class AssemblyHomeComponent {
 
 }

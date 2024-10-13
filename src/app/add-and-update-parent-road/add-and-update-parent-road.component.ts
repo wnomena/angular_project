@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inversed_month, Month, parent_road_list } from '../../simple_animation/animation';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
+import { HttpService } from '../http.service';
+import { LocalStorageService } from '../local-storage.service';
 // import { FileSystem } from "@angular/core"
 // import { FormData, parent_road_list } from '../../simple_animation/animation';
 
@@ -16,11 +18,11 @@ import { InternalFooterComponent } from '../internal-footer/internal-footer.comp
 })
 export class AddAndUpdateParentRoadComponent implements OnInit{
   value_to_show: parent_road_list | undefined
-  constructor(private http : HttpClient,private router : ActivatedRoute,private redirect : Router) {}
+  constructor(private http : HttpService,private router : ActivatedRoute,private redirect : Router,private localStorage : LocalStorageService) {}
   ngOnInit(): void {
     if(this.router.snapshot.paramMap.get("id") !== "0") {
       this.title = "Uptade road"
-      this.http.get<{data : parent_road_list[]}>(`http://localhost:5000/public_get/parent_way/one_road/${this.router.snapshot.paramMap.get("id")}`).subscribe({next : a => {
+      this.http.get_one_road(this.router.snapshot.paramMap.get("id")).subscribe({next : a => {
         Array.from(a.data).forEach((b)=> this.value_to_show = b)
       }})
     }
@@ -44,11 +46,11 @@ export class AddAndUpdateParentRoadComponent implements OnInit{
       this.modif_or_add()
     }
     modif_or_add() {
-      if(this.router.snapshot.paramMap.get("id") == "0") this.http.post("https://caponmada.com/utilisateurs/add_avant_post/by_user",this.form_data).subscribe({next : a => {
+      if(this.router.snapshot.paramMap.get("id") == "0") this.http.Add_new_parent_road(this.form_data).subscribe({next : a => {
         this.redirect.navigate(["dist/first_project_with_angular/browser//admin/home/list-of-parent"])
         console.log("er")
-      },error : b =>  location.reload()})
-      else this.http.put(`https://caponmada.com/utilisateurs/update_parent_road/by_user/${this.router.snapshot.paramMap.get("id")}`,this.form_data).subscribe((a)=> {
+      },error : b =>  this.localStorage.actualisation()})
+      else this.http.update_parent_road(this.form_data,this.router.snapshot.paramMap.get("id")).subscribe((a)=> {
         this.redirect.navigate(["dist/first_project_with_angular/browser/admin/home/list-of-parent"])
       })
     }

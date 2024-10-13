@@ -1,6 +1,6 @@
 @if(!template.display) {
     <section class="border">
-        <div><a href="admin/home/update/parent-road/0"> Ajout</a></div>
+        <div><a routerLInk="admin/home/update/parent-road/0" routerLinkActive="activebutton"> Ajout</a></div>
         <section class="d-flex flex-nowrap justify-content-around col-3 lg-3">
             <div class="bg-transparent" *ngFor="let i of parent_road">
                 <img src="{{i.presentation_image}}" alt="{{i.name}}" srcset="">

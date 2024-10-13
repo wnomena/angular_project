@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })
-export class FooterComponent implements OnInit {
-  ngOnInit(): void {
-    localStorage.removeItem("-1")
-  }
-  
+export class FooterComponent {
+  mail : string = "contact@caponmada.com"
 }

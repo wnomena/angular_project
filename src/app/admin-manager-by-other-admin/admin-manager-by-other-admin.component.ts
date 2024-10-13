@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { member_model } from '../../simple_animation/animation';
 import { NgFor } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-admin-manager-by-other-admin',
@@ -14,9 +15,9 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 export class AdminManagerByOtherAdminComponent implements OnInit {
   token_display : { display : boolean, value : String} = {display :false, value : ""}
   data : member_model[] | undefined
-  constructor(private http : HttpClient,private router : Router){}
+  constructor(private http : HttpService,private router : Router){}
   ngOnInit(): void {
-    this.http.get<{data :  member_model[]}>(`https://caponmada.com/get_admin_or_member/1`).subscribe((a) => {
+    this.http.get_all_admin_all_member().subscribe((a) => {
       console.log(a)
         this.data = [...a.data]
         console.log(this.data)
@@ -30,7 +31,7 @@ export class AdminManagerByOtherAdminComponent implements OnInit {
         user_mail : localStorage.getItem("id_for_admin_or_member_in_cap_sur_mada_web_site"),
         member_mail : this.token_display.value
       }
-      this.http.delete(`https://caponmada.com/utilisateurs/delete_member/by_admin/${body.user_mail}/${body.member_mail}`).subscribe({next : a => {
+      this.http.delete_member(body.member_mail).subscribe({next : a => {
         this.router.navigate(["dist/first_project_with_angular/browser/admin/home/list-admin"])
       },
       error : err => {

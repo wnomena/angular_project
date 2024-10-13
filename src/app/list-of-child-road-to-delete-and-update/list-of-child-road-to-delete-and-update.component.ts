@@ -4,6 +4,7 @@ import { NgFor } from '@angular/common';
 import { InternalFooterComponent } from '../internal-footer/internal-footer.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { HttpService } from '../http.service';
 @Component({
   selector: 'app-list-of-child-road-to-delete-and-update',
   standalone: true,
@@ -12,11 +13,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './list-of-child-road-to-delete-and-update.component.css'
 })
 export class ListOfChildRoadToDeleteAndUpdateComponent implements OnInit {
-  constructor(private avtivated : ActivatedRoute,private http : HttpClient,private router : Router) {}
+  constructor(private avtivated : ActivatedRoute,private http : HttpService,private router : Router) {}
   img : String | undefined;
   child_road_list: child_road_list[] = [];
   ngOnInit(): void {
-    this.http.get<fetch_clild_road>(`https://caponmada.com/${this.avtivated.snapshot.paramMap.get("id")}/public/way`).subscribe(value=>{
+    this.http.get_some_child_road(this.avtivated.snapshot.paramMap.get("id")).subscribe(value=>{
       for(let i = 0; i < value.data.length; i++) {
         this.child_road_list.push(value.data[i])
         if(i == 0) {

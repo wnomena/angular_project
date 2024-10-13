@@ -1,21 +1,21 @@
-<div class="row mt-3 border">
+<div class="row d-flex flex-column border">
   <div class="col-lg-4 col-md-6 col-12 m-lg-auto m-md-auto p-1 rounded">
     <div class="col-12 mt-3 mb-5"><h3 class="text-center text-light">Connexion</h3></div>
     <div class="col-12 mt-1 mb-1"><h5 class="text-center">{{ value_show }}</h5></div>
-    <div class="col-lg-10 col-md-10 col-7 m-auto mb-4">
-      <label class="col-12 text-center text-light fs-4" for="">Entrer votre e-mail</label>
+    <div class="col-lg-10 d-flex flex-column justify-content-center col-md-10 col-12 m-auto mb-4">
+      <label class="col-12 text-center text-light fs-4" for="">Enter your email</label>
       <input #email class="col-11 m-auto mt-3 border-top-0 border-start-0 border-end-0 border-bottom-1 text-center" type="email" name="" id="">
     </div>
-    <div class="col-lg-10 col-md-10 col-7 m-auto mb-4">
-      <label class="col-12 text-center text-light fs-4" for="">Entrer votre mots de passe</label>
-      <input #mot_de_passe class="col-11 m-auto mt-3 border-top-0 border-start-0 border-end-0 border-bottom-1 text-center" type="password" name="" id="">
+    <div class="col-lg-10 d-flex flex-column justify-content-center col-md-10 col-12 m-auto mb-4">
+      <label class="col-12 text-center text-light fs-4" for="">Enter your passwords</label>
+      <input #mot_de_passe class="col-11  mt-3 border-t op-0 border-start-0 border-end-0 border-bottom-1 text-center" type="password" name="" id="">
     </div> 
       <div class="col-lg-10 col-md-10 col-7 m-auto mb-4 d-flex justify-content-lg-end justify-content-md-end justify-content-center">
-        <div (click)="validate(email.value,mot_de_passe.value,$event)" type="button" class="bg-primary p-2 text-light rounded">Se connecter</div>
+        <div (click)="validate(email.value,mot_de_passe.value,$event)" type="button" class="bg-primary p-2 text-light rounded">Log in</div>
       </div>
       <div class="validate d-flex flex-column mb-2">
-        <span class="fs-5 text-lg-start text-md-start text-center"><a class="text-decoration-none" href="login/subscription/subscription"> Créer votre compte </a></span>
-        <span class="fs-6 text-lg-start text-md-start text-center"><a routerLink="/" routerLinkActive="activebutton" class="text-decoration-none">Annuler</a></span>
+        <span class="fs-5 text-lg-start text-md-start text-center"><a class="text-decoration-none" routerLink="/login/subscription/subscription" routerLinkActive="activebutton"> Sign up </a></span>
+        <span class="fs-6 text-lg-start text-md-start text-center"><a routerLink="/" routerLinkActive="activebutton" class="text-decoration-none">Cancel</a></span>
     </div>
   </div>
 </div>

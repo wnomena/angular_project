@@ -42,7 +42,6 @@ export class ListOfParentRoadUpdateAndDeleteComponent implements OnInit {
   }
   send_api() {
     this.http.delete_parent_road(this.template.value).subscribe((a)=> {
-      console.log("mandeana")
       this.navigate2.navigate(["dist/first_project_with_angular/browser/admin/home/list-of-parent"])})
   }
 }

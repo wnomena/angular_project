@@ -3,6 +3,7 @@ import { child_road_list } from '../../simple_animation/animation';
 import { HttpClient } from '@angular/common/http';
 import { NgFor } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-favorite-road',
@@ -13,9 +14,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class FavoriteRoadComponent implements OnInit {
   value_to_show:child_road_list[] = [];
-  constructor(private http : HttpClient) {}   
+  constructor(private http : HttpService) {}   
   ngOnInit(): void {
-    this.http.get<{data : child_road_list[]}>("http://localhost:5000/get_all/favorite_road").subscribe((a)=> {
+    this.http.get_all_favorite().subscribe((a)=> {
       for(let i of a.data) {
         this.value_to_show.push(i)
       }
