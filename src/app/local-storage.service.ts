@@ -1,22 +1,21 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageService {
-
-  constructor() { }
-
+  constructor(@Inject(PLATFORM_ID) private plateform_id : Object) { }
   getValueFormSessionStorage(params:string) :string | null {
-    return sessionStorage.getItem(`${params}`)
+    return isPlatformBrowser(this.plateform_id) ? sessionStorage.getItem(`${params}`) : null 
   }
   setValueForSessionStorage(params:string,value : string) :void {
-    sessionStorage.setItem(`${params}`,`${value}`)
+   if(isPlatformBrowser(this.plateform_id)) sessionStorage.setItem(`${params}`,`${value}`)
   }
-  removeValueFormSessionStorage(value : string) {
-    sessionStorage.removeItem(value)
+  removeValueFormSessionStorage(value : string):void {
+     if(isPlatformBrowser(this.plateform_id)) sessionStorage.removeItem(value)
   }
   actualisation() : void {
-    location.reload()
+   if(isPlatformBrowser(this.plateform_id)) location.reload()
   }
 }

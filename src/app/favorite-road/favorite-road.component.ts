@@ -17,7 +17,7 @@ export class FavoriteRoadComponent implements OnInit {
   constructor(private http : HttpService) {}   
   ngOnInit(): void {
     this.http.get_all_favorite().subscribe((a)=> {
-      for(let i of a.data) {
+      if(typeof a.data == typeof child_road_list) for(let i of a.data) {
         this.value_to_show.push(i)
       }
     })

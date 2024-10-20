@@ -14,10 +14,10 @@ import { HttpService } from '../http.service';
   styleUrl: './text-component-for-child-road.component.css'
 })
 export class TextComponentForChildRoadComponent implements OnInit {
-  value_to_show: child_road_list[] | undefined
+  value_to_show: child_road_list | undefined
   constructor(private http : HttpService,private useParams : ActivatedRoute) {}
   ngOnInit(): void {
-    this.http.get_some_child_road(this.useParams.snapshot.paramMap.get("name")).subscribe((res)=> {
+    this.http.get_one_child_road(this.useParams.snapshot.paramMap.get("name")).subscribe((res)=> {
       this.value_to_show = res.data
       let i:string;
     })

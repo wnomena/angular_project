@@ -40,10 +40,10 @@ export class HttpService implements OnDestroy {
     get_all_child_road() :Observable<fetch_clild_road> {
       return this.http.get<fetch_clild_road>(`${this.link}/0/public/way`)
     }
-    get_some_child_road(id :any) {
-      return this.http.get<fetch_clild_road>(`https://caponmada.com/${id}/public/way`)
+    get_some_child_road(id :any):Observable<fetch_clild_road> {
+      return this.http.get<fetch_clild_road>(`${this.link}/${id}/public/way`)
     } 
-    get_all_favorite() {
+    get_all_favorite():Observable<{data : child_road_list[]}> {
       return this.http.get<{data : child_road_list[]}>(`${this.link}/get_all/favorite_road`)
     }
     get_all_coommentary() :Observable<{message : string, liste :commentary_model[]}> {
@@ -54,6 +54,9 @@ export class HttpService implements OnDestroy {
     }
     delete_one_member(mail_member : string,mail_user : string | null) :Observable<{message : string}> {
       return this.http.delete<{message : string}>(`${this.link}/utilisateurs/delete_member/by_admin/${mail_user}/${mail_member}`)
+    }
+    add_child_road(formData : FormData):Observable<{message : string}> {
+     return  this.http.post<{message : string}>(`${this.link}/utilisateurs/add_unders/circuit/by_users`,formData)
     }
     add_new_member(value : any):Observable<{message : string}> {
       return this.http.post<{message : string}>(`${this.link}/utilisateurs/by_admin/create/new_member/${bool[0]}`,value)
